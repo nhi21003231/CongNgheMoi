@@ -1,0 +1,145 @@
+[24-Oct-2024 21:38:05 Asia/Ho_Chi_Minh] PHP Warning:  include(../../../CNM_Project/TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:38:05 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening '../../../CNM_Project/TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:38:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/nongsans/public_html/admin/giaodien/in_hd.php:8
+Stack trace:
+#0 /home/nongsans/public_html/admin/giaodien/in_hd.php(8): mysqli_connect()
+#1 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 8
+[24-Oct-2024 21:38:57 Asia/Ho_Chi_Minh] PHP Warning:  include(../../../CNM_Project/TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:38:57 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening '../../../CNM_Project/TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:38:57 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/nongsans/public_html/admin/giaodien/in_hd.php:8
+Stack trace:
+#0 /home/nongsans/public_html/admin/giaodien/in_hd.php(8): mysqli_connect()
+#1 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 8
+[24-Oct-2024 21:41:45 Asia/Ho_Chi_Minh] PHP Warning:  include(../../../CNM_Project/TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:41:45 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening '../../../CNM_Project/TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:41:45 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in /home/nongsans/public_html/admin/giaodien/in_hd.php:8
+Stack trace:
+#0 /home/nongsans/public_html/admin/giaodien/in_hd.php(8): mysqli_connect()
+#1 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 8
+[24-Oct-2024 21:42:28 Asia/Ho_Chi_Minh] PHP Warning:  include(../../../CNM_Project/TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:42:28 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening '../../../CNM_Project/TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:42:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 32
+[24-Oct-2024 21:43:43 Asia/Ho_Chi_Minh] PHP Warning:  include(TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:43:43 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening 'TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:43:43 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 32
+[24-Oct-2024 21:43:45 Asia/Ho_Chi_Minh] PHP Warning:  include(TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:43:45 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening 'TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:43:45 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 32
+[24-Oct-2024 21:45:22 Asia/Ho_Chi_Minh] PHP Warning:  include(/TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:45:22 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening '/TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:45:22 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 32
+[24-Oct-2024 21:45:55 Asia/Ho_Chi_Minh] PHP Warning:  include(/TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:45:55 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening '/TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:45:55 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 32
+[24-Oct-2024 21:46:46 Asia/Ho_Chi_Minh] PHP Warning:  include(TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:46:46 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening 'TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:46:46 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 32
+[24-Oct-2024 21:49:19 Asia/Ho_Chi_Minh] PHP Warning:  include(public_html/TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:49:19 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening 'public_html/TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[24-Oct-2024 21:49:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 32
+[26-Oct-2024 14:59:06 Asia/Ho_Chi_Minh] PHP Warning:  include(public_html/TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[26-Oct-2024 14:59:06 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening 'public_html/TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[26-Oct-2024 14:59:06 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 32
+[26-Oct-2024 15:00:18 Asia/Ho_Chi_Minh] PHP Warning:  include(./TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[26-Oct-2024 15:00:18 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening './TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[26-Oct-2024 15:00:18 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 32
+[26-Oct-2024 15:00:20 Asia/Ho_Chi_Minh] PHP Warning:  include(./TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[26-Oct-2024 15:00:20 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening './TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[26-Oct-2024 15:00:20 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 32
+[26-Oct-2024 15:00:45 Asia/Ho_Chi_Minh] PHP Warning:  include(../TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[26-Oct-2024 15:00:45 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening '../TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 3
+[26-Oct-2024 15:00:45 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 32
+[26-Oct-2024 15:02:10 Asia/Ho_Chi_Minh] PHP Warning:  include(../TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:02:10 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening '../TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:02:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 31
+[26-Oct-2024 15:04:08 Asia/Ho_Chi_Minh] PHP Warning:  include(../TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:04:08 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening '../TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:04:08 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 31
+[26-Oct-2024 15:04:10 Asia/Ho_Chi_Minh] PHP Warning:  include(../TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:04:10 Asia/Ho_Chi_Minh] PHP Warning:  include(): Failed opening '../TCPDF-main/tcpdf.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:04:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Class "TCPDF" not found in /home/nongsans/public_html/admin/giaodien/in_hd.php:31
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 31
+[26-Oct-2024 15:04:58 Asia/Ho_Chi_Minh] PHP Warning:  require_once(../TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:04:58 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '../TCPDF-main/tcpdf.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:05:06 Asia/Ho_Chi_Minh] PHP Warning:  require_once(TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:05:06 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'TCPDF-main/tcpdf.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:05:17 Asia/Ho_Chi_Minh] PHP Warning:  require_once(./TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:05:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required './TCPDF-main/tcpdf.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:05:26 Asia/Ho_Chi_Minh] PHP Warning:  require(./TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:05:26 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required './TCPDF-main/tcpdf.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:05:33 Asia/Ho_Chi_Minh] PHP Warning:  require(TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:05:33 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required 'TCPDF-main/tcpdf.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:05:45 Asia/Ho_Chi_Minh] PHP Warning:  require(../TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:05:45 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '../TCPDF-main/tcpdf.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:07:30 Asia/Ho_Chi_Minh] PHP Warning:  require(./../TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:07:30 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required './../TCPDF-main/tcpdf.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:07:50 Asia/Ho_Chi_Minh] PHP Warning:  require(././TCPDF-main/tcpdf.php): Failed to open stream: No such file or directory in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
+[26-Oct-2024 15:07:50 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Failed opening required '././TCPDF-main/tcpdf.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/nongsans/public_html/admin/giaodien/in_hd.php:2
+Stack trace:
+#0 {main}
+  thrown in /home/nongsans/public_html/admin/giaodien/in_hd.php on line 2
