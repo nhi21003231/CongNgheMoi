@@ -2,7 +2,8 @@
 session_start();
 $user = $_POST['username'];
 $pass = $_POST['password'];
-$conn = mysqli_connect("localhost", "nongsans_root", "2477,Ap7SP.2", "nongsans_db");
+// $conn = mysqli_connect("localhost", "nongsans_root", "2477,Ap7SP.2", "nongsans_db");
+$conn = mysqli_connect("localhost", "root", "", "nongsans_db");
 $sql = "SELECT * FROM `taikhoang` WHERE username='$user' AND pass='$pass'";
 echo $sql;
 $result = mysqli_query($conn, $sql);
@@ -14,12 +15,11 @@ if ($row['trang_thai'] == '1')
     header("location:index.php?dn=khoa");
 else
     if (mysqli_num_rows($result) > 0) {
-        $_SESSION['nguoidung'] = $row['fullname'];
-        $_SESSION['quyen'] = $row['id_quyen'];
-        $_SESSION['user'] = $row['username'];
-        $_SESSION['idnhanvien'] = $row2['id'];
-        $_SESSION['tennhanvien'] = $row2['ten_nv'];
-        header("location:admin.php?dn=true");
-    } else
-        header("location:index.php?dn=false");
-?>
+    $_SESSION['nguoidung'] = $row['fullname'];
+    $_SESSION['quyen'] = $row['id_quyen'];
+    $_SESSION['user'] = $row['username'];
+    $_SESSION['idnhanvien'] = $row2['id'];
+    $_SESSION['tennhanvien'] = $row2['ten_nv'];
+    header("location:admin.php?dn=true");
+} else
+    header("location:index.php?dn=false");
