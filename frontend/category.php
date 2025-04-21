@@ -1,4 +1,5 @@
 <!-- BREADCRUMB -->
+
 <div id="breadcrumb" class="section">
 	<!-- container -->
 	<div class="container">
@@ -89,11 +90,44 @@
 				<!-- /store bottom filter -->
 			</div>
 			<!-- /STORE -->
+			<!-- STORE SECTION - HIỂN THỊ DANH SÁCH SẢN PHẨM -->
+<div class="row" id="phan_trang">
+    <?php
+    if ($act == 'category' && $id > 0) {
+        $sql = "SELECT * FROM sanpham WHERE id_the_loai = $id ORDER BY id DESC LIMIT 0, 8";
+        $dssp = executeResult($sql);
+
+        if (!empty($dssp)) {
+            foreach ($dssp as $sp) {
+                echo '<div class="col-md-3 col-sm-6">'
+                    . '<div class="product">'
+                    . '<div class="product-img">'
+                    . '<img src="./img/' . $sp['hinh_anh'] . '" style="height:200px; object-fit:cover" alt="">'
+                    . '</div>'
+                    . '<div class="product-body">'
+                    . '<p class="product-category">Thể loại</p>'
+                    . '<h3 class="product-name"><a href="?act=detail&id=' . $sp['id'] . '">' . $sp['ten_sp'] . '</a></h3>'
+                    . '<h4 class="product-price">' . currency_format($sp['don_gia']) . '</h4>'
+                    . '</div>'
+                    . '<div class="add-to-cart">'
+                    . '<button class="add-to-cart-btn" onclick="addCart(' . $sp['id'] . ', 1)">Thêm vào giỏ</button>'
+                    . '</div>'
+                    . '</div>'
+                    . '</div>';
+            }
+        } else {
+            echo '<div class="col-12"><p>Không có sản phẩm nào thuộc thể loại này.</p></div>';
+        }
+    }
+    ?>
+</div>
 		</div>
 		<!-- /row -->
 	</div>
 	<!-- /container -->
 </div>
+
+
 <!-- /SECTION -->
 <script type="text/javascript">
 	$(document).ready(function() {
