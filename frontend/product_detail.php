@@ -1,6 +1,16 @@
 <!-- Lấy tên thể loại khi biết id sản phẩm -->
 <?php
-$sql = 'select ten_sp, ten_tl,id_nhaban, theloai.id as id_tl from sanpham, theloai where sanpham.id=' . $id . ' and theloai.id=sanpham.id_the_loai';
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']); // Lấy id từ URL và đảm bảo là số nguyên
+} else {
+    die('Không tìm thấy sản phẩm!'); // Thông báo lỗi nếu không có id
+}
+// $sql = 'select ten_sp, ten_tl,id_nhaban, theloai.id as id_tl from sanpham, theloai where sanpham.id=' . $id . ' and theloai.id=sanpham.id_the_loai';
+
+// $listcate_pro = executeSingleResult($sql);
+$sql = 'select ten_sp, ten_tl, id_nhaban, theloai.id as id_tl 
+        from sanpham, theloai 
+        where sanpham.id=' . $id . ' and theloai.id=sanpham.id_the_loai';
 $listcate_pro = executeSingleResult($sql);
 $id_nhaban = $listcate_pro['id_nhaban'];
 $sql1 = 'select ten_kh, id from khachhang where id = ' . $id_nhaban . '';

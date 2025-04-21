@@ -1,10 +1,11 @@
 <?php
 require_once('config.php');
 
-function execute($sql) {
+function execute($sql)
+{
     // Mở kết nối đến cơ sở dữ liệu
     $con = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
-    
+
     // Đặt mã hóa ký tự UTF-8
     mysqli_set_charset($con, "utf8");
 
@@ -15,7 +16,8 @@ function execute($sql) {
     mysqli_close($con);
 }
 
-function executeResult($sql) {
+function executeResult($sql)
+{
     // Mở kết nối đến cơ sở dữ liệu
     $con = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
 
@@ -38,7 +40,8 @@ function executeResult($sql) {
     return $data;
 }
 
-function executeSingleResult($sql) {
+function executeSingleResult($sql)
+{
     // Mở kết nối đến cơ sở dữ liệu
     $con = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
 
