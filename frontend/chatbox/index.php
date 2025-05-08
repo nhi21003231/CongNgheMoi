@@ -1,6 +1,6 @@
 <?php
 // Kết nối cơ sở dữ liệu
-    $conn = mysqli_connect('localhost', 'nongsans_root', '7HgAYa_,yc@f', 'nongsans_db');
+    $conn = mysqli_connect('localhost', 'root', '', 'nongsans_db');
 $conn->set_charset("utf8mb4");
 // Kiểm tra kết nối
 if ($conn->connect_error) {
@@ -115,9 +115,9 @@ if ($receiver_id === null || $sender_id === null) {
 
         <div class="container">
             <ul class="header-links pull-left">
-                <li><a href="#"><i class="fa fa-phone"></i> 0987654321</a></li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i> namphuc@email.com</a></li>
-                <li><a href="#"><i class="fa fa-map-marker"></i> 256/126/33 Phan Huy Ích, Phường 12, Gò Vấp, Thành phố
+                <li><a href="#"><i class="fa fa-phone"></i> 0945352322</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i> nhilinh@email.com</a></li>
+                <li><a href="#"><i class="fa fa-map-marker"></i> 84/20 Huỳnh Khương An, phường 5, Gò Vấp, Thành phố
                         Hồ
                         Chí Minh</a></li>
             </ul>

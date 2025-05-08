@@ -1,6 +1,6 @@
 <?php
 // Kết nối cơ sở dữ liệu
-$conn = mysqli_connect('localhost', 'nongsans_root', '7HgAYa_,yc@f', 'nongsans_db') or die('Lỗi kết nối');
+$conn = mysqli_connect('localhost', 'root', '', 'nongsans_db') or die('Lỗi kết nối');
 mysqli_set_charset($conn, "utf8");
 
 // Dùng isset để kiểm tra Form

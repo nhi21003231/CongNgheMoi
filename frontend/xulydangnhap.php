@@ -17,7 +17,7 @@
 // Xử lý đăng nhập
 if (isset($_POST['dangnhap'])) {
     // Kết nối tới database
-    $conn = mysqli_connect('localhost', 'nongsans_root', '7HgAYa_,yc@f', 'nongsans_db') or die('Lỗi kết nối');
+    $conn = mysqli_connect('localhost', 'root', '', 'nongsans_db') or die('Lỗi kết nối');
     mysqli_set_charset($conn, "utf8");
 
     // Lấy dữ liệu nhập vào

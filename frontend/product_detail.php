@@ -5,13 +5,13 @@ if (isset($_GET['id'])) {
 } else {
     die('Không tìm thấy sản phẩm!'); // Thông báo lỗi nếu không có id
 }
-// $sql = 'select ten_sp, ten_tl,id_nhaban, theloai.id as id_tl from sanpham, theloai where sanpham.id=' . $id . ' and theloai.id=sanpham.id_the_loai';
+$sql = 'select ten_sp, ten_tl,id_nhaban, theloai.id as id_tl from sanpham, theloai where sanpham.id=' . $id . ' and theloai.id=sanpham.id_the_loai';
 
-// $listcate_pro = executeSingleResult($sql);
-$sql = 'select ten_sp, ten_tl, id_nhaban, theloai.id as id_tl 
-        from sanpham, theloai 
-        where sanpham.id=' . $id . ' and theloai.id=sanpham.id_the_loai';
 $listcate_pro = executeSingleResult($sql);
+// $sql = 'select ten_sp, ten_tl, id_nhaban, theloai.id as id_tl 
+//         from sanpham, theloai 
+//         where sanpham.id=' . $id . ' and theloai.id=sanpham.id_the_loai';
+// $listcate_pro = executeSingleResult($sql);
 $id_nhaban = $listcate_pro['id_nhaban'];
 $sql1 = 'select ten_kh, id from khachhang where id = ' . $id_nhaban . '';
 $nhaban = executeSingleResult($sql1);
@@ -140,9 +140,9 @@ $detailproduct = executeSingleResult($sql);
                             </div>
                         </div>
                         <?php if ($id_nhaban != $_SESSION['user_id']) { ?>
-                        <button class="add-to-cart-btn" onclick="addCart(<?= $id ?>,1);themThanhCong(<?= $id ?>);"><i
-                                class="fa fa-shopping-cart"></i> <span id="messAddCart<?= $id ?>">Thêm vào
-                                giỏ</span></button>
+                            <button class="add-to-cart-btn" onclick="addCart(<?= $id ?>,1);themThanhCong(<?= $id ?>);"><i
+                                    class="fa fa-shopping-cart"></i> <span id="messAddCart<?= $id ?>">Thêm vào
+                                    giỏ</span></button>
                         <?php } ?>
                     </div>
                     <div id="tbQty" style="color:red"></div>

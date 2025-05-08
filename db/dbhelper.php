@@ -19,7 +19,7 @@ function execute($sql)
 function executeResult($sql)
 {
     // Mở kết nối đến cơ sở dữ liệu
-    $con = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
+    $con = mysqli_connect("localhost", "root", "", "nongsans_db");
 
     // Đặt mã hóa ký tự UTF-8
     mysqli_set_charset($con, "utf8");
@@ -43,7 +43,7 @@ function executeResult($sql)
 function executeSingleResult($sql)
 {
     // Mở kết nối đến cơ sở dữ liệu
-    $con = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
+    $con = mysqli_connect("localhost", "root", "", "nongsans_db");
 
     // Đặt mã hóa ký tự UTF-8
     mysqli_set_charset($con, "utf8");
