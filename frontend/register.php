@@ -100,7 +100,7 @@
         margin-right: 0.5em;
         border-radius: 100%;
         vertical-align: -3px;
-        border: 2px solid $grey;
+        /* border: 2px solid $grey; */
         padding: 0.15em;
         background-color: transparent;
         background-clip: content-box;

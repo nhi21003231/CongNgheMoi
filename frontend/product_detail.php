@@ -169,7 +169,11 @@ $detailproduct = executeSingleResult($sql);
                         </li>
 
                     </ul>
-
+                    <!-- Thêm thông tin Xuất xứ -->
+                    <ul class="product-links">
+                        <li>Xuất xứ:</li>
+                        <li><b><?= isset($listcate_pro['xuatsu']) ? $listcate_pro['xuatsu'] : 'Không xác định' ?></b></li>
+                    </ul>
                     <ul class="product-links">
                         <li>Chia sẽ:</li>
                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>

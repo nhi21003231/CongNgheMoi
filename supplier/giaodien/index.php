@@ -62,7 +62,7 @@
 <header>
     <div class="row">
         <div class="col-md-3">
-            <a href="../../index.php"><img style="width:125px;" src="../../img/logo2.png" alt=""></a>
+            <a href="../../index.php"><img style="width:125px;" src="../../img/logo3.png" alt=""></a>
         </div>
         <div class="col-md-9">
             <h1>TRANG NÔNG DÂN</h1>

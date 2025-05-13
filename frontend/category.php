@@ -6,7 +6,8 @@
 		<!-- row -->
 		<div class="row">
 			<div class="col-md-12">
-				<img src="./img/banner/banner11.png" alt="Your Banner" style="width: 100%; height: 500px; display: inline-block; border-top-left-radius: 100px 100px; border-bottom-right-radius: 100px 100px; " class="img-fluid"> <!-- Thêm thuộc tính "display: inline-block;" -->
+				<img src="./img/banner/banner11.png" alt="Your Banner" style="width: 100%; height: 500px; display: inline-block; border-top-left-radius: 100px 100px; border-bottom-right-radius: 100px 100px; " class="img-fluid">
+				<!-- Thêm thuộc tính "display: inline-block;" -->
 
 			</div>
 
@@ -27,7 +28,7 @@
 				<!-- aside Widget -->
 				<div class="aside">
 					<h3 class="aside-title"></h3>
-					<img src="./img/quangcao.jpg" alt="Your Banner" style="width: 100%; height: 950px; display: inline-block; border-top-left-radius: 100px 100px; border-bottom-right-radius: 100px 100px; " class="img-fluid">
+					<img src="./img/quangcao.jpg" alt="Your Banner" style="width: 100%; height: 500px; display: inline-block; border-top-left-radius: 100px 100px; border-bottom-right-radius: 100px 100px; " class="img-fluid">
 
 				</div>
 				<!-- /aside Widget -->
@@ -94,7 +95,7 @@
 			<div class="row" id="phan_trang">
 				<?php
 				if ($act == 'category' && $id > 0) {
-					$sql = "SELECT * FROM sanpham WHERE id_the_loai = $id ORDER BY id DESC LIMIT 0, 8";
+					$sql = "SELECT * FROM sanpham WHERE id_the_loai = $id ORDER BY id DESC LIMIT 0, 4";
 					$dssp = executeResult($sql);
 
 					if (!empty($dssp)) {
@@ -106,7 +107,7 @@
 								. '</div>'
 								. '<div class="product-body">'
 								// . '<p class="product-category">Thể loại</p>'
-								. '<h3 class="product-name"><a href="?act=detail&id=' . $sp['id'] . '">' . $sp['ten_sp'] . '</a></h3>'
+								. '<h3 class="product-name"><a href="?act=product&id=' . $sp['id'] . '">' . $sp['ten_sp'] . '</a></h3>'
 								. '<h4 class="product-price">' . currency_format($sp['don_gia']) . '</h4>'
 								. '</div>'
 								. '<div class="add-to-cart">'
