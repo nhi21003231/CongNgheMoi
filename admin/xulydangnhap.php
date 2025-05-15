@@ -2,7 +2,7 @@
 session_start();
 $user = $_POST['username'];
 $pass = $_POST['password'];
-$conn = mysqli_connect("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
+$conn = mysqli_connect("localhost", "root", "", "nongsans_db");
 
 // Set the charset to UTF-8
 mysqli_set_charset($conn, "utf8");

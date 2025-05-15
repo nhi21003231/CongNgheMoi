@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 13, 2025 lúc 05:27 PM
+-- Thời gian đã tạo: Th5 15, 2025 lúc 02:48 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -246,7 +246,9 @@ INSERT INTO `cthoadon` (`id`, `id_sanpham`, `id_hoadon`, `so_luong`, `id_nhaban`
 (214, 18, 120, 1, 4),
 (215, 18, 121, 1, 4),
 (216, 18, 122, 1, 4),
-(217, 18, 123, 1, 4);
+(217, 18, 123, 1, 4),
+(218, 6, 124, 1, 1),
+(219, 6, 125, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -501,107 +503,110 @@ CREATE TABLE `hoadon` (
   `deliveryStatus` varchar(255) DEFAULT 'Đang giao',
   `diachinhanhang` varchar(255) DEFAULT NULL,
   `ten_nguoinhan` varchar(255) DEFAULT NULL,
-  `sdt_nguoinhan` varchar(20) DEFAULT NULL
+  `sdt_nguoinhan` varchar(20) DEFAULT NULL,
+  `isDelete` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `hoadon`
 --
 
-INSERT INTO `hoadon` (`id`, `id_khachhang`, `tong_tien`, `ngay_tao`, `id_nhanvien`, `trang_thai`, `deliveryStatus`, `diachinhanhang`, `ten_nguoinhan`, `sdt_nguoinhan`) VALUES
-(7, 1, 96300, '2021-05-13 09:49:40', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(8, 1, 57450, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(9, 1, 52500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(10, 1, 118500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(11, 2, 166500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(12, 2, 37500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(15, 2, 52800, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(16, 2, 29500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(17, 2, 29500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(18, 2, 29500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(19, 2, 29500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(24, 2, 36450, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(25, 2, 8500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(26, 2, 44500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(27, 2, 8500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(28, 2, 37500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(29, 2, 10500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(30, 2, 10500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(31, 2, 10500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(32, 2, 8950, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(33, 2, 7500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(34, 2, 9500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(35, 2, 9500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(36, 2, 7500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(37, 3, 21000, '2021-05-13 10:05:08', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(39, 3, 31500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(40, 3, 19450, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(41, 3, 21000, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(42, 3, 9500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(43, 3, 16450, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(44, 3, 16450, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(46, 4, 174000, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(48, 4, 8500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(52, 4, 10500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(53, 4, 10500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(54, 4, 9500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(56, 4, 8500, '2021-05-13 10:05:06', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(57, 4, 10500, '2021-05-13 10:05:04', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(58, 4, 10500, '2021-05-13 10:05:00', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(59, 4, 8500, '2021-05-13 10:04:58', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(60, 4, 10500, '2021-05-13 10:04:56', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(61, 4, 8500, '2021-05-13 10:04:50', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(62, 4, 9500, '2021-05-13 10:04:48', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(63, 4, 9500, '2021-05-13 10:04:46', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(64, 4, 28500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(65, 4, 10500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(66, 4, 7500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(67, 4, 20000, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(68, 7, 87700, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(69, 6, 36450, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(70, 6, 38450, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(71, 6, 78000, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(72, 5, 90500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(73, 5, 22500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(75, 5, 73500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(76, 5, 45400, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(77, 6, 131700, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(81, 6, 269000, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(83, 6, 81400, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(84, 6, 564450, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(87, 3, 1016000, '2021-05-13 10:02:43', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(88, 7, 232500, '2021-05-13 13:10:37', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(89, 7, 35800, '2021-05-13 13:11:28', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(90, 7, 42600, '2021-05-13 13:23:26', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(92, 9, 8950, '2021-05-13 13:48:02', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(93, 9, 400000, '2021-05-13 13:50:00', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(94, 8, 200000, '2021-05-13 14:25:24', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(95, 2, 81300, '2021-05-14 03:46:31', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(96, 1, 299000, '2021-05-14 03:47:21', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(97, 1, 44400, '2021-05-14 03:48:33', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(98, 1, 224200, '2021-05-14 03:49:07', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(99, 1, 150500, '2021-05-14 03:52:56', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(100, 3, 340500, '2021-05-14 03:57:38', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(101, 3, 136350, '2021-05-14 03:58:05', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(102, 3, 30000, '2021-05-14 04:38:04', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(103, 3, 408950, '2021-05-14 06:01:00', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(104, 3, 45000, '2021-05-14 06:40:59', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(105, 3, 137450, '2021-05-14 08:04:48', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(106, 6, 17000, '2021-05-14 13:22:17', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(107, 6, 19950, '2021-05-14 14:18:36', NULL, 0, 'Đang giao', NULL, NULL, NULL),
-(109, 10, 15000, '2021-05-15 02:54:50', 1, 1, 'Đang giao', NULL, NULL, NULL),
-(112, 12, 3325000, '2025-05-13 09:50:00', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322'),
-(113, 12, 3325000, '2025-05-13 09:50:54', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322'),
-(114, 12, 3325000, '2025-05-13 09:52:26', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322'),
-(115, 12, 990000, '2025-05-13 09:53:10', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322'),
-(116, 12, 490000, '2025-05-13 09:53:30', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322'),
-(117, 12, 727000, '2025-05-13 09:59:17', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322'),
-(118, 12, 500000, '2025-05-13 10:00:25', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322'),
-(119, 12, 1000000, '2025-05-13 10:00:33', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322'),
-(120, 12, 272500, '2025-05-13 10:13:11', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322'),
-(121, 12, 272500, '2025-05-13 10:14:52', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322'),
-(122, 12, 272500, '2025-05-13 10:18:18', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322'),
-(123, 12, 272500, '2025-05-13 10:22:15', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322');
+INSERT INTO `hoadon` (`id`, `id_khachhang`, `tong_tien`, `ngay_tao`, `id_nhanvien`, `trang_thai`, `deliveryStatus`, `diachinhanhang`, `ten_nguoinhan`, `sdt_nguoinhan`, `isDelete`) VALUES
+(7, 1, 96300, '2021-05-13 09:49:40', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(8, 1, 57450, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(9, 1, 52500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(10, 1, 118500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(11, 2, 166500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(12, 2, 37500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(15, 2, 52800, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(16, 2, 29500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(17, 2, 29500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(18, 2, 29500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(19, 2, 29500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(24, 2, 36450, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(25, 2, 8500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(26, 2, 44500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(27, 2, 8500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(28, 2, 37500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(29, 2, 10500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(30, 2, 10500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(31, 2, 10500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(32, 2, 8950, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(33, 2, 7500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(34, 2, 9500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(35, 2, 9500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(36, 2, 7500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(37, 3, 21000, '2021-05-13 10:05:08', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(39, 3, 31500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(40, 3, 19450, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(41, 3, 21000, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(42, 3, 9500, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(43, 3, 16450, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(44, 3, 16450, '2021-05-13 09:50:03', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(46, 4, 174000, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(48, 4, 8500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(52, 4, 10500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(53, 4, 10500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(54, 4, 9500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(56, 4, 8500, '2021-05-13 10:05:06', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(57, 4, 10500, '2021-05-13 10:05:04', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(58, 4, 10500, '2021-05-13 10:05:00', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(59, 4, 8500, '2021-05-13 10:04:58', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(60, 4, 10500, '2021-05-13 10:04:56', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(61, 4, 8500, '2021-05-13 10:04:50', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(62, 4, 9500, '2021-05-13 10:04:48', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(63, 4, 9500, '2021-05-13 10:04:46', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(64, 4, 28500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(65, 4, 10500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(66, 4, 7500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(67, 4, 20000, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(68, 7, 87700, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(69, 6, 36450, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(70, 6, 38450, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(71, 6, 78000, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(72, 5, 90500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(73, 5, 22500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(75, 5, 73500, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(76, 5, 45400, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(77, 6, 131700, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(81, 6, 269000, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(83, 6, 81400, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(84, 6, 564450, '2021-05-13 09:50:03', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(87, 3, 1016000, '2021-05-13 10:02:43', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(88, 7, 232500, '2021-05-13 13:10:37', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(89, 7, 35800, '2021-05-13 13:11:28', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(90, 7, 42600, '2021-05-13 13:23:26', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(92, 9, 8950, '2021-05-13 13:48:02', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(93, 9, 400000, '2021-05-13 13:50:00', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(94, 8, 200000, '2021-05-13 14:25:24', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(95, 2, 81300, '2021-05-14 03:46:31', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(96, 1, 299000, '2021-05-14 03:47:21', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(97, 1, 44400, '2021-05-14 03:48:33', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(98, 1, 224200, '2021-05-14 03:49:07', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(99, 1, 150500, '2021-05-14 03:52:56', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(100, 3, 340500, '2021-05-14 03:57:38', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(101, 3, 136350, '2021-05-14 03:58:05', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(102, 3, 30000, '2021-05-14 04:38:04', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(103, 3, 408950, '2021-05-14 06:01:00', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(104, 3, 45000, '2021-05-14 06:40:59', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(105, 3, 137450, '2021-05-14 08:04:48', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(106, 6, 17000, '2021-05-14 13:22:17', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(107, 6, 19950, '2021-05-14 14:18:36', NULL, 0, 'Đang giao', NULL, NULL, NULL, 0),
+(109, 10, 15000, '2021-05-15 02:54:50', 1, 1, 'Đang giao', NULL, NULL, NULL, 0),
+(112, 12, 3325000, '2025-05-13 09:50:00', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(113, 12, 3325000, '2025-05-13 09:50:54', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(114, 12, 3325000, '2025-05-13 09:52:26', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(115, 12, 990000, '2025-05-13 09:53:10', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(116, 12, 490000, '2025-05-13 09:53:30', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(117, 12, 727000, '2025-05-13 09:59:17', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(118, 12, 500000, '2025-05-13 10:00:25', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(119, 12, 1000000, '2025-05-13 10:00:33', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(120, 12, 272500, '2025-05-13 10:13:11', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(121, 12, 272500, '2025-05-13 10:14:52', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(122, 12, 272500, '2025-05-13 10:18:18', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(123, 12, 272500, '2025-05-13 10:22:15', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(124, 12, 355000, '2025-05-13 10:42:35', NULL, 0, '0', 'kk', 'Vo Van Nhi', '0945352322', 0),
+(125, 12, 355000, '2025-05-14 08:55:53', 0, 1, '1', 'kk', 'Vo Van Nhi', '0945352322', 0);
 
 -- --------------------------------------------------------
 
@@ -660,6 +665,16 @@ CREATE TABLE `messages` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `messages`
+--
+
+INSERT INTO `messages` (`id`, `sender_id`, `receiver_id`, `content`, `status`, `created_at`) VALUES
+(1, 12, 5, 'aaaa', 'unseen', '2025-05-13 15:32:35'),
+(2, 12, 5, 'aaaaaaaaa', 'unseen', '2025-05-13 15:32:58'),
+(3, 12, 5, '?', 'unseen', '2025-05-14 13:46:57'),
+(4, 12, 1, 'bbbb', 'unseen', '2025-05-14 13:55:21');
+
 -- --------------------------------------------------------
 
 --
@@ -699,7 +714,9 @@ INSERT INTO `nhacungcap` (`id`, `ten_ncc`, `email`, `web_site`, `logo`, `phone`,
 (15, 'Hades ', 'hades@gmail.com', 'hades.com', 'none', '093434223', '2021-05-13 02:39:05', '2021-05-13 02:39:05'),
 (16, 'Badhabits', 'badhabits@gmail.com', 'badhabit.com', 'none', '08953543333', '2021-05-13 02:40:48', '2021-05-13 02:40:48'),
 (17, 'Have Fun With The Homie', 'hfwth@gmail.com', 'hfwth.com', 'none', '07687543', '2021-05-13 02:40:48', '2021-05-13 02:40:48'),
-(18, 'Now Sagion', 'Now_SG@gmail.com', 'Now_SG.com', 'none', '05462542', '2021-05-13 02:42:00', '2021-05-13 02:42:00');
+(18, 'Now Sagion', 'Now_SG@gmail.com', 'Now_SG.com', 'none', '05462542', '2021-05-13 02:42:00', '2021-05-13 02:42:00'),
+(19, 'Võ Văn Nhí', 'nhipro2513@gmail.com', 'https://vnexpress.net/nhung-sinh-vien-khong-ngai-ra-truong-muon-4533012.html#:~:text=TS%20Nguy%E1%BB%85n%20Thanh%20B%C3%ACnh%2C%20tr%C6%B0%E1%BB%9Fng,h%E1%BA%A1n%20n%C4%83m%202022%20kho%E1%BA%A3ng%2050%25.', '', '0362669945', '2025-05-15 07:01:36', '2025-05-15 07:01:36'),
+(20, 'Võ Văn Nhí', 'nhipro2513@gmail.com', 'https://vnexpress.net/nhung-sinh-vien-khong-ngai-ra-truong-muon-4533012.html#:~:text=TS%20Nguy%E1%BB%85n%20Thanh%20B%C3%ACnh%2C%20tr%C6%B0%E1%BB%9Fng,h%E1%BA%A1n%20n%C4%83m%202022%20kho%E1%BA%A3ng%2050%25.', '', '0362669945', '2025-05-15 07:06:42', '2025-05-15 07:06:42');
 
 -- --------------------------------------------------------
 
@@ -930,7 +947,7 @@ INSERT INTO `sanpham` (`id`, `ten_sp`, `don_gia`, `hinh_anh`, `noi_dung`, `id_th
 (3, 'Xoài Thái\r\n', 207000, 'TraiCay3.jpg', 'Màu sắc: Đen', 1, 3, 43, 14, '2021-04-15 10:40:44', '2021-04-15 10:40:44', 7, 1, 'Mỹ', 'Hữu cơ sinh học', 'Loại 3', '1 tháng', 'Đạt', 'Không rõ nguồn gốc', 'Nhiệt độ phòng', 'Phát hiện E.coli'),
 (4, 'Dưa Lưới', 425000, 'TraiCay_4.jpg', 'Màu sắc: Hồng tím\r\n\r\n', 1, 4, 32, 21, '2021-04-15 10:42:35', '2021-04-15 10:42:35', 0, 4, 'Việt Nam', 'Không sử dụng', 'Đạt chuẩn VietGAP', '2 tuần', 'Đang xét nghiệm', 'Hợp pháp', 'Đông lạnh -18°C', 'Phát hiện E.coli'),
 (5, 'Thanh Long\r\n', 237000, 'TraiCay_5.jpg', 'Màu sắc: Xanh dương', 1, 5, 31, 20, '2021-04-15 10:43:51', '0000-00-00 00:00:00', 0, 4, 'Hàn Quốc', 'Hữu cơ', 'Đạt chuẩn VietGAP', '1 tuần', 'Đang xét nghiệm', 'Hợp pháp', 'Đông lạnh -18°C', 'Không phát hiện vi sinh gây hại'),
-(6, 'Quả Lê\r\n', 355000, 'TraiCay_6.jpg', 'Màu sắc: Hồng tím', 1, 5, 21, 38, '2021-04-15 10:44:47', '0000-00-00 00:00:00', 7, 1, 'Mỹ', 'Hữu cơ sinh học', 'Loại 3', '2 tuần', 'Không đạt', 'Hợp pháp', 'Bảo quản mát 5-10°C', 'Không phát hiện vi sinh gây hại'),
+(6, 'Quả Lê\r\n', 355000, 'TraiCay_6.jpg', 'Màu sắc: Hồng tím', 1, 5, 17, 42, '2021-04-15 10:44:47', '0000-00-00 00:00:00', 7, 1, 'Mỹ', 'Hữu cơ sinh học', 'Loại 3', '2 tuần', 'Không đạt', 'Hợp pháp', 'Bảo quản mát 5-10°C', 'Không phát hiện vi sinh gây hại'),
 (7, 'Rau Mồng Tơi', 237000, 'Rau1.jpg', 'Màu sắc: Xanh cổ vịt', 2, 5, 39, 19, '2021-04-15 10:45:58', '2021-04-15 10:45:58', 0, 2, 'Mỹ', 'Hữu cơ', 'Loại 3', '1 tuần', 'Đạt', 'Không rõ nguồn gốc', 'Đông lạnh -18°C', 'Đạt chuẩn vi sinh'),
 (8, 'Cà Tím', 207000, 'Rau2.jpg', 'Màu sắc: Họa tiết Bạc hà', 2, 4, 25, 30, '2021-04-15 10:47:36', '0000-00-00 00:00:00', 0, 2, 'Mỹ', 'Vô cơ', 'Loại 1', '2 tuần', 'Đạt', 'Hợp pháp', 'Đông lạnh -18°C', 'Không phát hiện vi sinh gây hại'),
 (9, 'Củ Dền', 207000, 'Rau3.jpg', 'Màu sắc: Kẻ Xanh dương đậm', 2, 8, 33, 18, '2021-04-15 10:51:33', '2021-04-15 10:51:33', 0, 5, 'Việt Nam', 'Không sử dụng', 'Loại 3', '1 tháng', 'Đạt', 'Hợp pháp', 'Nhiệt độ phòng', 'Phát hiện E.coli'),
@@ -1018,12 +1035,12 @@ CREATE TABLE `taikhoang` (
 --
 
 INSERT INTO `taikhoang` (`trang_thai`, `id_quyen`, `username`, `pass`, `fullname`) VALUES
-(0, 1, 'huynhdinhphuc', 'huynhdinhphuc123', 'Huynh Dinh Phuc'),
 (0, 3, 'nhanvien', 'nhanvien', 'nhan vien'),
 (0, 2, 'nhanvien10', '123', 'sp13'),
 (0, 2, 'quanly', 'admin', 'quanly'),
 (0, 6, 'vbm', 'admin', 'nv2'),
-(0, 4, 'VoVanNhi', '123', '123');
+(0, 4, 'VoVanNhi', '123', '123'),
+(0, 1, 'vovannhi123', 'vovannhi123', 'Võ Văn Nhí');
 
 -- --------------------------------------------------------
 
@@ -1044,7 +1061,7 @@ CREATE TABLE `theloai` (
 --
 
 INSERT INTO `theloai` (`id`, `ten_tl`, `tong_sp`, `ngay_tao`, `ngay_sua`) VALUES
-(1, 'Trái Cây', 160, '2021-04-15 10:23:25', '2021-04-15 10:23:25'),
+(1, 'Trái Cây', 156, '2021-04-15 10:23:25', '2021-04-15 10:23:25'),
 (2, 'Rau Hữu Cơ', 207, '2021-04-15 10:24:24', '2021-04-15 10:24:24'),
 (3, 'Thực Phẩm', 239, '2021-04-15 10:24:56', '2021-04-15 10:24:56'),
 (4, 'Bún-Gạo-Đậu', 299, '2021-04-15 10:25:25', '2021-04-15 10:25:25');
@@ -1264,7 +1281,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT cho bảng `cthoadon`
 --
 ALTER TABLE `cthoadon`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=218;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=220;
 
 --
 -- AUTO_INCREMENT cho bảng `danhmuc`
@@ -1294,7 +1311,7 @@ ALTER TABLE `hinhanhsp`
 -- AUTO_INCREMENT cho bảng `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT cho bảng `khachhang`
@@ -1306,13 +1323,13 @@ ALTER TABLE `khachhang`
 -- AUTO_INCREMENT cho bảng `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `nhacungcap`
 --
 ALTER TABLE `nhacungcap`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `nhanvien`

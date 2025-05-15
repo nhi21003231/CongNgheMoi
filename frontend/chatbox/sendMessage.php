@@ -1,6 +1,6 @@
 <?php
 // Kết nối cơ sở dữ liệu
-$conn = mysqli_connect("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
+$conn = mysqli_connect("localhost", "root", "", "nongsans_db");
 $conn->set_charset("utf8mb4");
 // Kiểm tra kết nối
 if ($conn->connect_error) {

@@ -1,7 +1,7 @@
 <?php 
 $id=isset($_GET['id'])?$_GET['id']:'';
 // kiểm tra xem id có trong database hay không
-$conn =mysqli_connect("localhost","root","","bannuocdb");
+$conn =mysqli_connect("localhost","root","","nongsans_db");
 $sql="SELECT * FROM sanpham WHERE id='$id'";
 
 $result = mysqli_query($conn,$sql);

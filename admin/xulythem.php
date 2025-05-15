@@ -44,7 +44,7 @@
                                     if ($_POST['idncc'] != '') {
                                         if (isset($_POST['content']))
                                             if ($_POST['content'] != '') {
-                                                $conn = mysqli_connect('localhost', 'nongsans_root', '7HgAYa_,yc@f', 'nongsans_db');
+                                                $conn = mysqli_connect('localhost', 'root', '', 'nongsans_db');
                                                 $namei = $_POST['name'];
                                                 $price = $_POST['price'];
                                                 // $image=$_FILES['image'];
@@ -133,7 +133,7 @@
                                                 if (isset($_POST['trangthai']) == NULL)
                                                     $trangthai = 1;
                                                 include_once('function.php');
-                                                $con = mysqli_connect("localhost", "root", "", "bannuocdb");
+                                                $con = mysqli_connect("localhost", "root", "", "nongsans_db");
                                                 $result4 = mysqli_query($con, "SELECT `id_the_loai` FROM `sanpham` WHERE `id`=" . $_GET['id'] . "");
                                                 $r2 = mysqli_fetch_array($result4);
                                                 if (isset($_FILES['gallery']) && !empty($_FILES['gallery']['name'][0])) {
@@ -311,7 +311,7 @@
                             // Tên đã tồn tại
                             header("location:./admin.php?act=suavctc&dk=trung");
                         } else {
-                            $con = mysqli_connect("localhost", "root", "", "bannuocdb");
+                            $con = mysqli_connect("localhost", "root", "", "nongsans_db");
                             $result1 = mysqli_query($con, "UPDATE `phuongthucvanchuyen` SET `name` = '" . $_POST['name'] . "', `price` = '" . $_POST['price'] . "'WHERE `phuongthucvanchuyen`.`id` = " . $_GET['id'] . " ");
                             if ($result1)
                                 header("location:./admin.php?act=suavctc&dk=yes");
@@ -327,7 +327,7 @@
     if (isset($_POST['btnttsua'])) {
         if (isset($_POST['name']))
             if ($_POST['name'] != '') {
-                $con = mysqli_connect("localhost", "root", "", "bannuocdb");
+                $con = mysqli_connect("localhost", "root", "", "nongsans_db");
                 $result1 = mysqli_query($con, "UPDATE `phuongthucthanhtoan` SET `name` = '" . $_POST['name'] . "' WHERE `phuongthucthanhtoan`.`id` = " . $_GET['id'] . " ");
                 if ($result1)
                     header("location:./admin.php?act=suatttc&dk=yes");
@@ -437,7 +437,7 @@
                             if ($_POST['email'] != '') {
                                 if ($_POST['tendangnhap'] != '')
                                     $tendangnhap = null;
-                                $con = mysqli_connect("localhost", "root", "", "bannuocdb");
+                                $con = mysqli_connect("localhost", "root", "", "nongsans_db");
                                 $result1 = mysqli_query($con, "UPDATE `nhanvien` SET `ten_nv` = '" . $_POST['name'] . "',`email` = '" . $_POST['email'] . "',`phone` = '" . $_POST['sdt'] . "',`ten_dangnhap` = '" . $_POST['tendangnhap'] . "' WHERE `nhanvien`.`id` = " . $_GET['id'] . " ");
                                 if ($result1)
                                     header("location:./admin.php?act=suanvtc&dk=yes");
@@ -505,7 +505,7 @@
         if ($_GET['act'] == 'xnhd') {
             if (isset($_GET['cuser']))
                 if ($_GET['cuser'] == '') {
-                    $conn = mysqli_connect('localhost', 'nongsans_root', '7HgAYa_,yc@f', 'nongsans_db');
+                    $conn = mysqli_connect('localhost', 'root', '', 'nongsans_db');
                     //$sql="SELECT `hoadon`.`id`, `id_khachhang`, `tong_tien`, `hoadon`.`ngay_tao`, `id_nhanvien`, `trangthai`, `ten_dangnhap`, `ten_nv`,`nhanvien`.`id` AS `idnv` FROM (`hoadon` LEFT JOIN `nhanvien` ON `nhanvien`.`id`=`id_nhanvien` ) WHERE `hoadon`.`id` = " . $_GET['id'] . "";
                     $taikhoan = mysqli_query($conn, "SELECT `id`, `ten_dangnhap` FROM `nhanvien` WHERE `id`='" . $_GET['iduser'] . "'");
                     // $hoadon=mysqli_query($conn,$sql);var_dump($hoadon);
@@ -523,7 +523,7 @@
         if ($_GET['act'] == 'xnhdvc') {
             if (isset($_GET['cuser'])) {
                 if ($_GET['cuser'] == '') {
-                    $conn = mysqli_connect('localhost', 'nongsans_root', '7HgAYa_,yc@f', 'nongsans_db') or die('Lỗi kết nối');
+                    $conn = mysqli_connect('localhost', 'root', '', 'nongsans_db') or die('Lỗi kết nối');
                     // Kiểm tra kết nối
                     if (!$conn) {
                         die("Kết nối không thành công: " . mysqli_connect_error());
@@ -677,7 +677,7 @@
 
      if (isset($_POST['btnkd'])) {
         // Đếm số checkbox được check
-        $conn = mysqli_connect('localhost', 'nongsans_root', '7HgAYa_,yc@f', 'nongsans_db');
+        $conn = mysqli_connect('localhost', 'root', '', 'nongsans_db');
         mysqli_set_charset($conn, "utf8");
         $countChecked = 0;
         if (isset($_POST['trangthai']) && is_array($_POST['trangthai'])) {
@@ -740,7 +740,7 @@
             $id = $_POST['id'];
 
             // Kết nối cơ sở dữ liệu
-            $conn = mysqli_connect('localhost', 'nongsans_root', '7HgAYa_,yc@f', 'nongsans_db');
+            $conn = mysqli_connect('localhost', 'root', '', 'nongsans_db');
 
             // Kiểm tra kết nối
             if (!$conn) {
@@ -861,7 +861,7 @@
 
     if (isset($_POST['btndang'])) {
         // Kết nối cơ sở dữ liệu bằng MySQLi theo kiểu đối tượng
-       $conn = mysqli_connect('localhost', 'nongsans_root', '7HgAYa_,yc@f', 'nongsans_db');
+       $conn = mysqli_connect('localhost', 'root', '', 'nongsans_db');
 
         // Kiểm tra kết nối
         if ($conn->connect_error) {
@@ -942,7 +942,7 @@
     if (isset($_POST['capnhatdaydk'])) {
         if (isset($_POST['ngaydk']) && isset($_POST['id'])) {
             if ($_POST['ngaydk'] != '') {
-                $conn = mysqli_connect('localhost', 'nongsans_root', '7HgAYa_,yc@f', 'nongsans_db');
+                $conn = mysqli_connect('localhost', 'root', '', 'nongsans_db');
                 $result = mysqli_query($conn, "UPDATE `hoadon` SET `ngaynhandukien` = '" . $_POST['ngaydk'] . "'WHERE `id` = " . $_POST['id'] . " ");
                 if ($result) {
                     echo "<script>alert('Cập nhật ngày dự kiến giao thành công!');
@@ -967,7 +967,7 @@
             $id = $_POST['id'];
     
             // Kết nối cơ sở dữ liệu
-            $conn = mysqli_connect('localhost', 'nongsans_root', '7HgAYa_,yc@f', 'nongsans_db');
+            $conn = mysqli_connect('localhost', 'root', '', 'nongsans_db');
             mysqli_set_charset($conn, "utf8");
             // Kiểm tra kết nối
             if (!$conn) {

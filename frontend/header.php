@@ -335,12 +335,12 @@ if (isset($_SESSION['ten_dangnhap'])) {
 
                 // Mục Sản Phẩm
                 echo '<li class="dropdown">
-                        <a href="#" class="dropdown-toggle">Sản Phẩm</a>
+                        <a href="index.php?act=category" class="dropdown-toggle">Sản Phẩm</a>
                         <ul class="dropdown">';
 
                 // Danh sách thể loại sản phẩm
                 $categories = ['Trái Cây', 'Rau Hữu Cơ', 'Thực Phẩm', 'Bún-Gạo-Đậu'];
-                $sql = 'SELECT id, ten_tl FROM theloai WHERE ten_tl IN ("Trái Cây", "Rau Hữu Cơ", "Thực Phẩm", "Bún-Gạo-Đậu")';
+                $sql = 'SELECT id, ten_tl FROM theloai ';
                 $list = executeResult($sql);
                 foreach ($list as $item) {
                     $activeClass = ($act == 'category' && isset($_GET['id']) && $_GET['id'] == $item['id']) ? 'active' : '';
