@@ -10,7 +10,7 @@
         $ctphieunhap = mysqli_query($con, "SELECT `id_phieunhap`, `id_sp`, `ctphieunhap`.`so_luong`,`sanpham`.`id`,`ten_sp`,`don_gia`  FROM `ctphieunhap`,`sanpham` WHERE `id_sp`=`sanpham`.`id` AND `id_phieunhap`=" .$_GET['id']. " ORDER BY `ctphieunhap`.`id_phieunhap` ASC LIMIT " . $item_per_page . " OFFSET " . $offset);
         mysqli_close($con);
     ?>
-<button ><a href="./admin.php?muc=6&tmuc=Phiếu%20nhập"><-- Lùi</a></button>
+<button ><a href="./admin.php?muc=6&tmuc=Phiếu%20nhập">Quay lại</a></button>
 <div class="clear-both"></div>
 <div class="main-content">
             <h1>Chi tiết phiếu nhập</h1>

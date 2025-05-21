@@ -90,6 +90,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <?php
+// session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION['user_id'])) {
+    die("Bạn chưa đăng nhập hoặc phiên làm việc đã hết. Vui lòng đăng nhập lại.");
+}
+
 $user_id = $_SESSION['user_id'];
 // $con = mysqli_connect("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
 $con = mysqli_connect("localhost", "root", "", "nongsans_db");

@@ -1,5 +1,5 @@
 <?php
-    include_once("./connect_db.php");
+    include_once("../connect_db.php");
     if (isset($_SESSION['ten_dangnhap']) && !empty($_SESSION['ten_dangnhap'])) {
         $item_per_page = (!empty($_GET['per_page'])) ? $_GET['per_page'] : 10;
         $current_page = (!empty($_GET['page'])) ? $_GET['page'] : 1;

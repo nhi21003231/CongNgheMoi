@@ -37,7 +37,7 @@ if (isset($_POST['saveAdd'])) {
     if (isset($_POST['diachivuon']) && isset($_POST['id'])) {
         if ($_POST['diachivuon'] != '') {
             // Kết nối cơ sở dữ liệu
-            $conn = mysqli_connect("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
+            $conn = mysqli_connect("localhost", "root", "", "nongsans_db");
 
             // Thiết lập mã hóa UTF-8
             mysqli_set_charset($conn, "utf8");
@@ -94,7 +94,7 @@ if (isset($_POST['saveAdd'])) {
                 if (isset($_POST['idtl']) && $_POST['idtl'] != '') {
                     if (isset($_POST['quantity']) && $_POST['quantity'] != '') {
                         if (isset($_POST['content']) && $_POST['content'] != '') {
-                            $conn = mysqli_connect("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
+                            $conn = mysqli_connect("localhost", "root", "", "nongsans_db");
                             mysqli_set_charset($conn, "utf8");
                             $namei = $_POST['name'];
                             $price = $_POST['price'];
@@ -184,7 +184,7 @@ if (isset($_POST['saveAdd'])) {
                             }
     
                             include_once('function.php');
-                            $con = mysqli_connect("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
+                            $con = mysqli_connect("localhost", "root", "", "nongsans_db");
                             mysqli_set_charset($con, "utf8");
                             $result4 = mysqli_query($con, "SELECT `id_the_loai` FROM `sanpham` WHERE `id`=" . $_GET['id'] . "");
                             $r2 = mysqli_fetch_array($result4);
@@ -275,7 +275,7 @@ if (isset($_POST['saveAdd'])) {
     if (isset($_POST['btntlsua'])) {
         if (isset($_POST['name']))
             if ($_POST['name'] != '') {
-                $con = mysqli_connect("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
+                $con = mysqli_connect("localhost", "root", "", "nongsans_db");
                 $result1 = mysqli_query($con, "UPDATE `theloai` SET `ten_tl` = '" . $_POST['name'] . "'WHERE `theloai`.`id` = " . $_GET['id'] . " ");
                 if ($result1)
                     header("location:./supplier.php?act=suatltc&dk=yes");
@@ -365,7 +365,7 @@ if (isset($_POST['saveAdd'])) {
                             if ($_POST['email'] != '') {
                                 if ($_POST['tendangnhap'] != '')
                                     $tendangnhap = null;
-                                $con = mysqli_connect("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
+                                $con = mysqli_connect("localhost", "root", "", "nongsans_db");
                                 $result1 = mysqli_query($con, "UPDATE `nhanvien` SET `ten_nv` = '" . $_POST['name'] . "',`email` = '" . $_POST['email'] . "',`phone` = '" . $_POST['sdt'] . "',`ten_dangnhap` = '" . $_POST['tendangnhap'] . "' WHERE `nhanvien`.`id` = " . $_GET['id'] . " ");
                                 if ($result1)
                                     header("location:./supplier.php?act=suanvtc&dk=yes");
@@ -433,7 +433,7 @@ if (isset($_POST['saveAdd'])) {
         if ($_GET['act'] == 'xnhd') {
             if (isset($_GET['cuser']))
                 if ($_GET['cuser'] != '') {
-                    $conn = mysqli_connect("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
+                    $conn = mysqli_connect("localhost", "root", "", "nongsans_db");
                     //$sql="SELECT `hoadon`.`id`, `id_khachhang`, `tong_tien`, `hoadon`.`ngay_tao`, `id_nhanvien`, `trangthai`, `ten_dangnhap`, `ten_nv`,`nhanvien`.`id` AS `idnv` FROM (`hoadon` LEFT JOIN `nhanvien` ON `nhanvien`.`id`=`id_nhanvien` ) WHERE `hoadon`.`id` = " . $_GET['id'] . "";
                     $taikhoan = mysqli_query($conn, "SELECT `id`, `ten_dangnhap` FROM `khachhang` WHERE `id`='" . $_GET['iduser'] . "'");
                     // $hoadon=mysqli_query($conn,$sql);var_dump($hoadon);
@@ -550,7 +550,7 @@ if (isset($_POST['saveAdd'])) {
 
     if (isset($_POST['btndang'])) {
         // Kết nối cơ sở dữ liệu bằng MySQLi theo kiểu đối tượng
-        $conn = new mysqli("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
+        $conn = new mysqli("localhost", "root", "", "nongsans_db");
 
         // Kiểm tra kết nối
         if ($conn->connect_error) {
@@ -583,7 +583,7 @@ if (isset($_POST['saveAdd'])) {
 
     if (isset($_POST['btngui'])) {
         // Kết nối cơ sở dữ liệu bằng MySQLi theo kiểu đối tượng
-        $conn = new mysqli("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
+        $conn = new mysqli("localhost", "root", "", "nongsans_db");
 
         // Kiểm tra kết nối
         if ($conn->connect_error) {

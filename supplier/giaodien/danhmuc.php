@@ -1,5 +1,5 @@
 <?php
-    include_once("./connect_db.php");
+    include_once("../connect_db.php");
     if (!empty($_SESSION['nguoidung'])) {
         $danhmuc1=mysqli_query($con,"SELECT * FROM `danhmuc`");
         $danhmuc2=mysqli_query($con,"SELECT * FROM `danhmuc`");

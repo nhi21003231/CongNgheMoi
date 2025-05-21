@@ -93,6 +93,25 @@
         </thead>
         <tbody>
             <!-- Thêm các hàng dữ liệu ở đây -->
+           <?php
+                $conn = mysqli_connect("localhost", "root", "", "nongsans_db");
+                $conn->set_charset("utf8mb4");
+                $sql = "SELECT sanpham.id, ten_sp, don_gia, hinh_anh, theloai.ten_tl, so_luong 
+                        FROM sanpham 
+                        LEFT JOIN theloai ON sanpham.id_the_loai = theloai.id";
+                $result = mysqli_query($conn, $sql);
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<tr>";
+                    echo "<td>".$row['id']."</td>";
+                    echo "<td>".$row['ten_sp']."</td>";
+                    echo "<td>".$row['don_gia']."</td>";
+                    echo "<td><img src='../../img/".$row['hinh_anh']."' style='width:60px;'></td>";
+                    echo "<td>".$row['ten_tl']."</td>";
+                    echo "<td>".$row['so_luong']."</td>";
+                    echo "</tr>";
+                }
+                mysqli_close($conn);
+                ?> 
         </tbody>
     </table>
 </div>

@@ -1,5 +1,5 @@
 <?php
-    include_once("./connect_db.php");
+    include_once("../connect_db.php");
     if (!empty($_SESSION['nguoidung'])) {
         $con = mysqli_connect($host, $user, $password, $database);
         $item_per_page = (!empty($_GET['per_page'])) ? $_GET['per_page'] : 10;

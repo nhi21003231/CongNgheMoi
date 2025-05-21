@@ -8,8 +8,8 @@ if (!empty($_SESSION['nguoidung'])) {
             <?php
             $error = false;
             if (isset($_GET['id']) && !empty($_GET['id'])) {
-                include_once './connect_db.php';
-                include_once './function.php';
+                include_once '../connect_db.php';
+                include_once '../function.php';
                 $result = execute("DELETE FROM `nhacungcap` WHERE `id` = " . $_GET['id']."");
                 if (!$result) {
                     $error = "Không thể xóa nhà cung cấp.";

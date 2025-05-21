@@ -34,7 +34,7 @@
 <?php
     // Tổng tiền hóa đơn theo khách hàng từ ngày 2021-05-01 đến 2021-05-31
     $strSQL= "SELECT id,ngay_tao, sum(tong_tien) FROM hoadon WHERE ngay_tao BETWEEN '2021-05-01' AND '2021-05-31' GROUP by id";
-    $tong = executeQuery("localhost","root","","bannuocdb",$strSQL);
+    $tong = executeQuery("localhost","root","","nongsans_db",$strSQL);
     foreach($tong as $item){
         $array[]=$item;
     }
@@ -48,7 +48,7 @@
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Thống kê tình hình kinh doanh trong một khoảng thời gian của các sản phẩm thuộc một loại / tất cả sản phẩm.
     $strSQL= "SELECT sanpham.id, SUM(chitiethoadon.soluong*sanpham.don_gia) as tongtien FROM hoadon,chitiethoadon,sanpham WHERE hoadon.ngay_tao BETWEEN '2021-05-01' AND '2021-05-31' AND hoadon.id=chitiethoadon.mahd and chitiethoadon.masp=sanpham.id GROUP by sanpham.id";
-    $tinhhinhkinhdoanh = executeQuery("localhost","root","","bannuocdb",$strSQL);
+    $tinhhinhkinhdoanh = executeQuery("localhost","root","","nongsans_db",$strSQL);
     foreach($tinhhinhkinhdoanh as $item3){
         $array3[]=$item3;
     }
@@ -78,7 +78,7 @@
              ) as sdf
         GROUP by month(sdf.ngay_tao),sdf.masp) as tong
     WHERE maxtong.max = tong.tong and maxtong.month= tong.month";
-    $sanphambanchay = executeQuery("localhost","root","","bannuocdb",$strSQL);
+    $sanphambanchay = executeQuery("localhost","root","","nongsans_db",$strSQL);
     
     foreach($sanphambanchay as $item4){
         $array4[]=$item4;
