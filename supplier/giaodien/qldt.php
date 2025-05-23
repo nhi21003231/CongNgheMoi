@@ -1,7 +1,7 @@
 <?php
 include_once("./connect_db.php");
 if (isset($_SESSION['ten_dangnhap']) && !empty($_SESSION['ten_dangnhap']) && isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id']; // Lấy user_id từ session
+    $user_id = $_SESSION['user_id'];
     $item_per_page = (!empty($_GET['per_page'])) ? $_GET['per_page'] : 10;
     $current_page = (!empty($_GET['page'])) ? $_GET['page'] : 1;
     $offset = ($current_page - 1) * $item_per_page;
@@ -16,6 +16,14 @@ if (isset($_SESSION['ten_dangnhap']) && !empty($_SESSION['ten_dangnhap']) && iss
     // Truy vấn dữ liệu của khách hàng cụ thể
     $khachhang = mysqli_query($con, "SELECT * FROM `khachhang` WHERE `id` = '$user_id' AND `is_nongdan` = 1 LIMIT $item_per_page OFFSET $offset");
 
+    // Tính doanh thu đã thanh toán và chưa thanh toán từ bảng hoadon
+    $doanhthu_sql = "SELECT
+        SUM(CASE WHEN trang_thai = 1 THEN tong_tien ELSE 0 END) AS doanhthu_tt,
+        SUM(CASE WHEN trang_thai = 0 THEN tong_tien ELSE 0 END) AS doanhthu
+        FROM hoadon WHERE id_khachhang = $user_id";
+    $doanhthu_result = mysqli_query($con, $doanhthu_sql);
+    $doanhthu = mysqli_fetch_assoc($doanhthu_result);
+
     mysqli_close($con);
 ?>
 <style>
@@ -26,12 +34,10 @@ if (isset($_SESSION['ten_dangnhap']) && !empty($_SESSION['ten_dangnhap']) && iss
     padding: 8px;
     font-size: 16px;
 }
-
 .table-bordered th {
     background-color: #f0f0f0;
     text-align: center;
 }
-
 .table td {
     text-align: left;
 }
@@ -61,8 +67,8 @@ if (isset($_SESSION['ten_dangnhap']) && !empty($_SESSION['ten_dangnhap']) && iss
                         <td><?= $row['email'] ?></td>
                         <td><?= $row['dia_chi'] ?></td>
                         <td><?= $row['phone'] ?></td>
-                        <td><?= $row['doanhthu_tt'] ?></td>
-                        <td><?= $row['doanhthu'] ?></td>
+                        <td><?= number_format($doanhthu['doanhthu_tt']) ?> VNĐ</td>
+                        <td><?= number_format($doanhthu['doanhthu']) ?> VNĐ</td>
                     </tr>
                     <?php
                         }
@@ -75,7 +81,7 @@ if (isset($_SESSION['ten_dangnhap']) && !empty($_SESSION['ten_dangnhap']) && iss
         </div>
     </div>
     <?php
-        include './pagination.php'; // Giả sử bạn có một trang phân trang riêng
+        include './pagination.php';
     ?>
     <div class="clear-both"></div>
 </div>

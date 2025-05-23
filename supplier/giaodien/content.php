@@ -30,15 +30,15 @@ if (isset($_GET['tmuc'])) {
         include('product_list_kdkd.php');
 }
 if (isset($_GET['tmuc'])) {
-    if ($_GET['tmuc'] == 'SP chưa duyệt')
+    if ($_GET['tmuc'] == 'Sản phẩm chưa duyệt')
         include('product_list_check.php');
 }
 if (isset($_GET['tmuc'])) {
-    if ($_GET['tmuc'] == 'SP đã duyệt')
+    if ($_GET['tmuc'] == 'Sản Phẩm đã duyệt')
         include('product_list_qr.php');
 }
 if (isset($_GET['tmuc'])) {
-    if ($_GET['tmuc'] == 'SP chưa đạt')
+    if ($_GET['tmuc'] == 'Sản Phẩm chưa đạt')
         include('product_list_kdkd.php');
 }
 // if (isset($_GET['tmuc'])) {

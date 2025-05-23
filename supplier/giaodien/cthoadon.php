@@ -1,5 +1,5 @@
 <?php
-    include_once("../connect_db.php");
+    include_once("./connect_db.php");
     if (isset($_SESSION['ten_dangnhap']) && !empty($_SESSION['ten_dangnhap'])) {
         $item_per_page = (!empty($_GET['per_page'])) ? $_GET['per_page'] : 10;
         $current_page = (!empty($_GET['page'])) ? $_GET['page'] : 1;
@@ -7,10 +7,11 @@
         $totalRecords = mysqli_query($con, "SELECT * FROM `cthoadon`,`sanpham` WHERE `id_sanpham`=`sanpham`.`id`  AND `id_hoadon`=" .$_GET['id']. "");
         $totalRecords = $totalRecords->num_rows;
         $totalPages = ceil($totalRecords / $item_per_page);
-        $cthoadon = mysqli_query($con, "SELECT `id_hoadon`, `id_sanpham`, `cthoadon`.`so_luong`,`sanpham`.`id`,`ten_sp`,`don_gia`,`ptvc`  FROM `cthoadon`,`sanpham` WHERE `id_sanpham`=`sanpham`.`id` AND `id_hoadon`=" .$_GET['id']. " ORDER BY `cthoadon`.`id_hoadon` ASC LIMIT " . $item_per_page . " OFFSET " . $offset);
+        // $cthoadon = mysqli_query($con, "SELECT `id_hoadon`, `id_sanpham`, `cthoadon`.`so_luong`,`sanpham`.`id`,`ten_sp`,`don_gia`,`ptvc`  FROM `cthoadon`,`sanpham` WHERE `id_sanpham`=`sanpham`.`id` AND `id_hoadon`=" .$_GET['id']. " ORDER BY `cthoadon`.`id_hoadon` ASC LIMIT " . $item_per_page . " OFFSET " . $offset);
+        $cthoadon = mysqli_query($con, "SELECT `id_hoadon`, `id_sanpham`, `cthoadon`.`so_luong`,`sanpham`.`id`,`ten_sp`,`don_gia` FROM `cthoadon`,`sanpham` WHERE `id_sanpham`=`sanpham`.`id` AND `id_hoadon`=" .$_GET['id']. " ORDER BY `cthoadon`.`id_hoadon` ASC LIMIT " . $item_per_page . " OFFSET " . $offset);
         mysqli_close($con);
     ?>
-<button ><a href="./supplier.php?muc=1&tmuc=Hóa%20đơn"><-- Lùi</a></button>
+<button ><a href="./supplier.php?muc=1&tmuc=Hóa%20đơn">Quay lại</a></button>
 <div class="clear-both"></div>
 <div class="main-content">
             <h1>Chi tiết hóa đơn</h1>
@@ -22,7 +23,7 @@
                                 <th>Tên sản phẩm</th>
                                 <th>Số lượng</th>
                                 <th>Đơn giá</th>
-                                <th>Phương thức vận chuyển</th>
+                                <!-- <th>Phương thức vận chuyển</th> -->
                                 <th>Tổng tiền</th>
                             </tr>
                         </thead>
@@ -34,7 +35,7 @@
                                     <td><?= $row['ten_sp'] ?></td>
                                     <td><?= $row['so_luong'] ?></td>
                                     <td><?= $row['don_gia'] ?></td>
-                                    <td><?= $row['ptvc']?></td>
+                                    
                                     <td><?=$row['so_luong']*$row['don_gia']?></td>                      
                                     <div class="clear-both"></div>
                                 </tr>

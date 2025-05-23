@@ -28,7 +28,7 @@
 				<!-- aside Widget -->
 				<div class="aside">
 					<h3 class="aside-title"></h3>
-					<img src="./img/quangcao.jpg" alt="Your Banner" style="width: 100%; height: 500px; display: inline-block; border-top-left-radius: 100px 100px; border-bottom-right-radius: 100px 100px; " class="img-fluid">
+					<img src="./img/quangcao.jpg" alt="Your Banner" style="width: 100%; height: 550px; display: inline-block; border-top-left-radius: 100px 100px; border-bottom-right-radius: 100px 100px; " class="img-fluid">
 
 				</div>
 				<!-- /aside Widget -->
@@ -92,10 +92,12 @@
 			</div>
 			<!-- /STORE -->
 			<!-- STORE SECTION - HIỂN THỊ DANH SÁCH SẢN PHẨM -->
+			<div class="col-md-12"><h1 class="aside-title">Danh sách sản phẩm</h1></div>
+			 <div class="mt-4"></div>
 			<div class="row" id="phan_trang">
 				<?php
 				if ($act == 'category' && $id > 0) {
-					$sql = "SELECT * FROM sanpham WHERE id_the_loai = $id ORDER BY id DESC LIMIT 0, 4";
+					$sql = "SELECT * FROM sanpham WHERE id_the_loai = $id ORDER BY id DESC LIMIT 0, 8";
 					$dssp = executeResult($sql);
 
 					if (!empty($dssp)) {
@@ -111,7 +113,9 @@
 								. '<h4 class="product-price">' . currency_format($sp['don_gia']) . '</h4>'
 								. '</div>'
 								. '<div class="add-to-cart">'
-								. '<button class="add-to-cart-btn" onclick="addCart(' . $sp['id'] . ', 1)">Thêm vào giỏ</button>'
+								// . '<button class="add-to-cart-btn" onclick="addCart(' . $sp['id'] . ', 1)">Thêm vào giỏ</button>'
+
+. '<button class="add-to-cart-btn" onclick="addCart(' . $sp['id'] . ', 1); themThanhCong(' . $sp['id'] . ');">Thêm vào giỏ</button>'
 								. '</div>'
 								. '</div>'
 								. '</div>';
@@ -127,7 +131,11 @@
 	</div>
 	<!-- /container -->
 </div>
-
+<script>
+function themThanhCong(id) {
+    alert('Thêm vào giỏ thành công!');
+}
+</script>
 
 <!-- /SECTION -->
 <script type="text/javascript">

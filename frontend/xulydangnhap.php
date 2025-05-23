@@ -11,7 +11,6 @@
 <?php
 // Khai báo sử dụng session
 // session_start();
-// // Khai báo utf-8 để hiển thị được tiếng việt
 // header('Content-Type: text/html; charset=UTF-8');
 
 // Xử lý đăng nhập
@@ -27,9 +26,8 @@ if (isset($_POST['dangnhap'])) {
     if ($username == "" || $password == "") {
         echo '<br><p style="color:red;">Username hoặc Password không được để trống!</p>';
     } else {
-        // Lấy mật khẩu đã băm từ cơ sở dữ liệu
-        // $sql = "SELECT id, ten_dangnhap, mat_khau, trangthai, is_nongdan FROM khachhang WHERE ten_dangnhap = '$username'";
-        $sql = "SELECT id, ten_dangnhap, mat_khau, trangthai FROM khachhang WHERE ten_dangnhap = '$username'";
+        // Lấy mật khẩu đã băm từ cơ sở dữ liệu, bổ sung is_nongdan
+        $sql = "SELECT id, ten_dangnhap, mat_khau, trangthai, is_nongdan FROM khachhang WHERE ten_dangnhap = '$username'";
         $query = mysqli_query($conn, $sql);
         $num_rows = mysqli_num_rows($query);
 
@@ -45,14 +43,23 @@ if (isset($_POST['dangnhap'])) {
                 } else {
                     $_SESSION['user_id'] = $row['id'];
                     $_SESSION['ten_dangnhap'] = $username;
-                    $_SESSION['quyen'] = '7';
+                    $_SESSION['quyen'] = '1';
                     $_SESSION['isNongDan'] = $row['is_nongdan'];
-                    echo "<script>
+                    if ($row['is_nongdan'] == 1) {
+                        echo "<script>
+                            showNotification('Đăng nhập thành công!');
+                            setTimeout(() => {
+                                window.location = 'http://localhost:8080/Nhom10_CongNgheMoi/supplier/admin.php';
+                            }, 1000);
+                        </script>";
+                    } else {
+                        echo "<script>
                             showNotification('Đăng nhập thành công!');
                             setTimeout(() => {
                                 window.location = 'index.php';
                             }, 1000);
                         </script>";
+                    }
                 }
             } else {
                 echo '<br><p style="color:red;">Tên đăng nhập hoặc mật khẩu không đúng ! </p>';

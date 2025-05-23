@@ -37,7 +37,7 @@ form button a {
 
 <body>
 <?php
-include_once("../connect_db.php");
+include_once("./connect_db.php");
 if (!empty($_SESSION['nguoidung'])) {
     $item_per_page = (!empty($_GET['per_page'])) ? (int)$_GET['per_page'] : 6;
     $current_page = (!empty($_GET['page'])) ? (int)$_GET['page'] : 1;

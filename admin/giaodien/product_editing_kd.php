@@ -51,41 +51,41 @@ if (!empty($_SESSION['nguoidung'])) {
                         <tr>
                             <form method="POST" action="./xulythem.php?id=<?= $row['id'] ?>">
                                 <td style="text-align:center;">
-                                    <input type="checkbox" name="trangthai[]" value="1" <?php if($row['trangthai']==1) ?> onchange="updateQualityMessage()">
+                                    <input type="checkbox" name="trangthai[]" value="1" <?php if ($row['trangthai'] == 1) ?> onchange="updateQualityMessage()">
                                 </td>
                                 <td style="text-align:center;">
-                                    <input type="checkbox" name="trangthai[]" value="2" <?php if($row['trangthai']==2) ?> onchange="updateQualityMessage()">
+                                    <input type="checkbox" name="trangthai[]" value="2" <?php if ($row['trangthai'] == 2) ?> onchange="updateQualityMessage()">
                                 </td>
                                 <td style="text-align:center;">
-                                    <input type="checkbox" name="trangthai[]" value="3" <?php if($row['trangthai']==3) ?> onchange="updateQualityMessage()">
+                                    <input type="checkbox" name="trangthai[]" value="3" <?php if ($row['trangthai'] == 3) ?> onchange="updateQualityMessage()">
                                 </td>
                                 <td style="text-align:center;">
-                                    <input type="checkbox" name="trangthai[]" value="4" <?php if($row['trangthai']==4) ?> onchange="updateQualityMessage()">
+                                    <input type="checkbox" name="trangthai[]" value="4" <?php if ($row['trangthai'] == 4) ?> onchange="updateQualityMessage()">
                                 </td>
                                 <td style="text-align:center;">
-                                    <input type="checkbox" name="trangthai[]" value="5" <?php if($row['trangthai']==5) ?> onchange="updateQualityMessage()">
+                                    <input type="checkbox" name="trangthai[]" value="5" <?php if ($row['trangthai'] == 5) ?> onchange="updateQualityMessage()">
                                 </td>
                                 <td style="text-align:center;">
-                                    <input type="checkbox" name="trangthai[]" value="6" <?php if($row['trangthai']==6) ?> onchange="updateQualityMessage()">
+                                    <input type="checkbox" name="trangthai[]" value="6" <?php if ($row['trangthai'] == 6) ?> onchange="updateQualityMessage()">
                                 </td>
                                 <td style="text-align:center;">
-                                    <input type="checkbox" name="trangthai[]" value="7" <?php if($row['trangthai']==7) ?> onchange="updateQualityMessage()">
+                                    <input type="checkbox" name="trangthai[]" value="7" <?php if ($row['trangthai'] == 7) ?> onchange="updateQualityMessage()">
                                 </td>
                                 <td style="text-align:center;">
-                                    <input type="checkbox" name="trangthai[]" value="8" <?php if($row['trangthai']==8) ?> onchange="updateQualityMessage()">
+                                    <input type="checkbox" name="trangthai[]" value="8" <?php if ($row['trangthai'] == 8) ?> onchange="updateQualityMessage()">
                                 </td>
                                 <td style="text-align:center;">
                                     <input type="submit" name="btnkd" value="Lưu" onclick="return confirm('Bạn có muốn kiểm định sản phẩm?')">
                                 </td>
-                                <tr>
-                                    <td colspan="8" style="text-align:center;">
-                                        <div id="input-reason" style="display: none; margin-top: 10px;">    
-                                            <label for="reason">Lý do sản phẩm chưa đạt chuẩn:</label><br>
-                                            <textarea name="lydo" placeholder="Nhập lý do..." rows="4" cols="50"></textarea>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </form>
+                        <tr>
+                            <td colspan="8" style="text-align:center;">
+                                <div id="input-reason" style="display: none; margin-top: 10px;">
+                                    <label for="reason">Lý do sản phẩm chưa đạt chuẩn:</label><br>
+                                    <textarea name="lydo" placeholder="Nhập lý do..." rows="4" cols="50"></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                        </form>
                         </tr>
                     <?php
                     }
@@ -103,18 +103,18 @@ if (!empty($_SESSION['nguoidung'])) {
             // Lấy tất cả checkbox
             const checkboxes = document.querySelectorAll('input[type="checkbox"]');
             let checkedCount = 0;
-    
+
             // Đếm số checkbox được chọn
             checkboxes.forEach((checkbox) => {
                 if (checkbox.checked) {
                     checkedCount++;
                 }
             });
-    
+
             // Hiển thị hoặc ẩn các phần tử liên quan
             const messageDiv = document.getElementById('quality-message');
             const inputReasonDiv = document.getElementById('input-reason');
-    
+
             if (checkedCount >= 5) {
                 messageDiv.innerText = "Kết quả: Sản phẩm đạt chuẩn!";
                 messageDiv.style.color = "green";
@@ -128,6 +128,6 @@ if (!empty($_SESSION['nguoidung'])) {
             }
         }
     </script>
-    
+
     <div class="clear-both"></div>
 </div>

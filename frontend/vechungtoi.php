@@ -120,7 +120,7 @@
                         </div>
                         <div class="member">
                             <img src="img/Linh.png" alt="Đội ngũ phát triển" class="img1" />
-                            <p>Đoàn Thị Mai Linh <br> 21003231</p>
+                            <p>Đoàn Thị Mai Linh <br> 21066721</p>
                         </div>
                     </div>
                 </div>

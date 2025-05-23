@@ -132,8 +132,10 @@ $amount = floatval($_POST['amount']);
 
 // Cấu hình các thông số thanh toán
 $orderId = uniqid();
-$redirectUrl = "https://nongsansach.pro.vn/"; // Đường dẫn sau khi thanh toán thành công
-$ipnUrl = "https://nongsansach.pro.vn/"; // Đường dẫn nhận thông báo IPN (chế độ Live sẽ nhận thông báo IPN)
+// $redirectUrl = "https://nongsansach.pro.vn/"; // Đường dẫn sau khi thanh toán thành công
+// $ipnUrl = "https://nongsansach.pro.vn/"; // Đường dẫn nhận thông báo IPN (chế độ Live sẽ nhận thông báo IPN)
+$redirectUrl = "http://localhost/Nhom10_CongNgheMoi/index.php"; // Đổi về trang index của bạn
+$ipnUrl = "http://localhost/Nhom10_CongNgheMoi/index.php"; // Có thể để giống redirectUrl hoặc để trống nếu không dùng IPN
 $extraData = ""; // Thêm dữ liệu phụ (nếu cần)
 
 // Tạo requestId và signature
@@ -183,18 +185,18 @@ if (isset($jsonResult['payUrl'])) {
 ?>
 
 <?php
-// Xử lý thông báo thanh toán thành công sau khi người dùng quay lại từ MoMo
-if (isset($_GET['status']) && $_GET['status'] == 'success') {
-    // Nếu thanh toán thành công, bạn có thể xử lý các bước như lưu thông tin đơn hàng vào cơ sở dữ liệu.
-    echo "Thanh toán thành công!";
-    // Có thể chuyển hướng người dùng đến trang khác nếu cần
-    header('Location: https://nongsansach.pro.vn/');
-} elseif (isset($_GET['status']) && $_GET['status'] == 'fail') {
-    // Nếu thanh toán thất bại, bạn có thể thông báo cho người dùng biết.
-    echo "Thanh toán không thành công, vui lòng thử lại!";
-    // Chuyển hướng người dùng về trang giỏ hàng hoặc trang thanh toán
-    header('Location: https://nongsansach.pro.vn/');
-}
+// // Xử lý thông báo thanh toán thành công sau khi người dùng quay lại từ MoMo
+// if (isset($_GET['status']) && $_GET['status'] == 'success') {
+//     // Nếu thanh toán thành công, bạn có thể xử lý các bước như lưu thông tin đơn hàng vào cơ sở dữ liệu.
+//     echo "Thanh toán thành công!";
+//     // Có thể chuyển hướng người dùng đến trang khác nếu cần
+//     header('Location: http://localhost/Nhom10_CongNgheMoi/index.php');
+// } elseif (isset($_GET['status']) && $_GET['status'] == 'fail') {
+//     // Nếu thanh toán thất bại, bạn có thể thông báo cho người dùng biết.
+//     echo "Thanh toán không thành công, vui lòng thử lại!";
+//     // Chuyển hướng người dùng về trang giỏ hàng hoặc trang thanh toán
+//     header('Location: http://localhost/Nhom10_CongNgheMoi/index.php');
+// }
 
 
 ?>

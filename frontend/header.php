@@ -335,7 +335,7 @@ if (isset($_SESSION['ten_dangnhap'])) {
 
                 // Mục Sản Phẩm
                 echo '<li class="dropdown">
-                        <a href="index.php?act=category" class="dropdown-toggle">Sản Phẩm</a>
+                        <a href="index.php?act=category&id=1" class="dropdown-toggle">Sản Phẩm</a>
                         <ul class="dropdown">';
 
                 // Danh sách thể loại sản phẩm

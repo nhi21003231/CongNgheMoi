@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect("localhost", "nongsans_root", "7HgAYa_,yc@f", "nongsans_db");
+    $con = mysqli_connect("localhost", "root", "", "nongsans_db");
     $result = mysqli_query($con, "SELECT * FROM `taikhoang` WHERE `username` = '" . $_SESSION['user']."'");
     $taikhoang = $result->fetch_assoc();
 ?>

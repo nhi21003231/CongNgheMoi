@@ -11,7 +11,7 @@ if (!empty($_SESSION['nguoidung'])) {
     if ($con) {
         $usersQuery = "SELECT username, fullname FROM taikhoang WHERE id_quyen = 8";
         $usersResult = mysqli_query($con, $usersQuery);
-        
+
         // Lưu kết quả truy vấn vào một mảng
         $userList = [];
         while ($user = mysqli_fetch_array($usersResult)) {
@@ -30,7 +30,6 @@ if (!empty($_SESSION['nguoidung'])) {
                 $sql .= " AND `sanpham`.`phancong` = '" . $_POST['phancong'] . "'";
             }
             $totalRecordsQuery = mysqli_query($con, $sql);
-
         } else {
             $totalRecordsQuery = mysqli_query($con, "SELECT * FROM `sanpham`");
         }
@@ -38,7 +37,7 @@ if (!empty($_SESSION['nguoidung'])) {
         if ($totalRecordsQuery) {
             $totalRecords = $totalRecordsQuery->num_rows;
             $totalPages = ceil($totalRecords / $item_per_page);
-            
+
             if (isset($_POST['search'])) {
                 $sql = "SELECT sanpham.*, khachhang.diachivuon 
                          FROM sanpham 
@@ -54,7 +53,6 @@ if (!empty($_SESSION['nguoidung'])) {
                     $sql .= " AND `sanpham`.`phancong` = '" . $_POST['phancong'] . "'";
                 }
                 $products = mysqli_query($con, $sql);
-
             } else {
                 // Truy vấn mặc định để lấy sản phẩm với trangthai = 1 và JOIN thêm bảng taikhoang
                 $query = "SELECT sanpham.*, khachhang.diachivuon 
@@ -157,63 +155,63 @@ if (!empty($_SESSION['nguoidung'])) {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php 
+                        <?php
                         if (mysqli_num_rows($products) > 0) {
-                        while ($row = mysqli_fetch_array($products)) { ?>
-                            <tr>
-                                <td style="text-align:center"><?= $row['id'] ?></td>
-                                <td><img src="../img/<?= htmlspecialchars($row['hinh_anh']) ?>" /></td>
-                                <td style="text-align:center"><?= htmlspecialchars($row['ten_sp']) ?></td>
-                                <td style="text-align:center"><?= htmlspecialchars($row['diachivuon']) ?></td>
-                                <td style="text-align:center">
-                                    <?php
-                                    switch ($row['trangthai']) {
-                                        case '7':
-                                            echo "Đã đăng";
-                                            break;
-                                        case '6':
-                                            echo "Đang chờ duyệt bài đăng";
-                                            break;
-                                        case '5':
-                                            echo "Sản phẩm không đạt chuẩn";
-                                            break;
-                                        case '4':
-                                            echo "Sản phẩm đạt chuẩn";
-                                            break;
-                                        case '3':
-                                            echo "Đang chờ tạo mã QR";
-                                            break;
-                                        case '2':
-                                            echo "Đang chờ kiểm định";
-                                            break;
-                                        case '1':
-                                            echo "Đang chờ phân công kiểm định";
-                                            break;
-                                        case '0':
-                                            echo "Chưa kiểm định";
-                                            break;
-                                    }
-                                    ?>
-                                </td>
-                                 <td style="text-align:center">
-                                    <?php if (empty($row['phancong'])) { ?>
-                                    <form action="xulythem.php" method="POST" class="form-container1">
-                                        <input type="hidden" name="id" value="<?= htmlspecialchars($row['id']) ?>" />
-                                        <select name="kd">
-                                            <option value="" disabled selected>Chọn</option>
-                                            <?php foreach ($userList as $user) { ?>
-                                                <option value="<?= htmlspecialchars($user['username']) ?>">
-                                                    <?= htmlspecialchars($user['fullname']) ?>
-                                                </option>
-                                            <?php } ?>
-                                        </select>
-                                        <input type="submit" name="btn_pckd" value="Phân công" onclick="return confirm('Bạn có muốn phân công nhân viên?')">
-                                    </form>
-                                    <?php } else { ?>
-                                    <?= htmlspecialchars($row['phancong']) ?>
-                                    <?php } ?>
-                                </td>
-                            </tr>
+                            while ($row = mysqli_fetch_array($products)) { ?>
+                                <tr>
+                                    <td style="text-align:center"><?= $row['id'] ?></td>
+                                    <td><img src="../img/<?= htmlspecialchars($row['hinh_anh']) ?>" /></td>
+                                    <td style="text-align:center"><?= htmlspecialchars($row['ten_sp']) ?></td>
+                                    <td style="text-align:center"><?= htmlspecialchars($row['diachivuon']) ?></td>
+                                    <td style="text-align:center">
+                                        <?php
+                                        switch ($row['trangthai']) {
+                                            case '7':
+                                                echo "Đã đăng";
+                                                break;
+                                            case '6':
+                                                echo "Đang chờ duyệt bài đăng";
+                                                break;
+                                            case '5':
+                                                echo "Sản phẩm không đạt chuẩn";
+                                                break;
+                                            case '4':
+                                                echo "Sản phẩm đạt chuẩn";
+                                                break;
+                                            case '3':
+                                                echo "Đang chờ tạo mã QR";
+                                                break;
+                                            case '2':
+                                                echo "Đang chờ kiểm định";
+                                                break;
+                                            case '1':
+                                                echo "Đang chờ phân công kiểm định";
+                                                break;
+                                            case '0':
+                                                echo "Chưa kiểm định";
+                                                break;
+                                        }
+                                        ?>
+                                    </td>
+                                    <td style="text-align:center">
+                                        <?php if (empty($row['phancong'])) { ?>
+                                            <form action="xulythem.php" method="POST" class="form-container1">
+                                                <input type="hidden" name="id" value="<?= htmlspecialchars($row['id']) ?>" />
+                                                <select name="kd">
+                                                    <option value="" disabled selected>Chọn</option>
+                                                    <?php foreach ($userList as $user) { ?>
+                                                        <option value="<?= htmlspecialchars($user['username']) ?>">
+                                                            <?= htmlspecialchars($user['fullname']) ?>
+                                                        </option>
+                                                    <?php } ?>
+                                                </select>
+                                                <input type="submit" name="btn_pckd" value="Phân công" onclick="return confirm('Bạn có muốn phân công nhân viên?')">
+                                            </form>
+                                        <?php } else { ?>
+                                            <?= htmlspecialchars($row['phancong']) ?>
+                                        <?php } ?>
+                                    </td>
+                                </tr>
                         <?php }
                         } else {
                             echo "<tr><td colspan='7'>Không có dữ liệu hóa đơn.</td></tr>";

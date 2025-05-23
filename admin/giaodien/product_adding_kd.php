@@ -2,6 +2,10 @@
 $sql = "INSERT INTO `sanpham` (`id`, `ten_sp`, `hinh_anh`, `don_gia`, `noi_dung`, `ngay_tao`, `ngay_sua`,`so_luong`,`id_the_loai`,`id_nha_cc`) VALUES (NULL, '" . $_POST['name'] . "','" . $image . "', " . str_replace('.', '', $_POST['price']) . ", '" . $_POST['content'] . "', " . time() . ", " . time() . ",0,'" . $_POST['idtl'] . "','" . $_POST['idncc'] . "');";
                     -->
 <?php 
+// Kết nối database
+$con = mysqli_connect('localhost', 'root', '', 'nongsans_db');
+mysqli_set_charset($con, "utf8");
+
     $theloai=mysqli_query($con,"SELECT * FROM `theloai`");
     $nhacungcap=mysqli_query($con,"SELECT * FROM `nhacungcap`");
 ?>

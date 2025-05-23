@@ -111,9 +111,7 @@
 													<p class="product-category">SẢN PHẨM</p>
 													<h3 class="product-name"><a href="?act=product&id=' . $item['id'] . '">' . $item['ten_sp'] . '</a></h3>
 													<h4 class="product-price">' . currency_format($item['don_gia']) . ' </h4>
-													<div class="product-rating">
-														<button class="add-to-cart-btn" >SẢN PHẨM ĐÃ HẾT</button>
-													</div>
+
 													
 												</div>
 												<div class="add-to-cart">
@@ -133,12 +131,13 @@
 												<p class="product-category"><small>' . $item['sl_da_ban'] . ' đã bán</small></p>
 												<h3 class="product-name"><a href="?act=product&id=' . $item['id'] . '">' . $item['ten_sp'] . '</a></h3>
 												<h4 class="product-price">' . currency_format($item['don_gia']) . '</h4>
-												<div class="product-rating">
-													<button class="add-to-cart-btn" onclick="addCart(' . $item['id'] . ',1);themThanhCong(' . $item['id'] . ');"><i class="fa fa-shopping-cart"></i> <span id="messAddCart' . $item['id'] . '">Thêm vào giỏ</span></button>
-												</div>
 												
 											</div>
-											
+											<div class="add-to-cart">
+												<button class="add-to-cart-btn" onclick="addCart(' . $item['id'] . ',1);themThanhCong(' . $item['id'] . ');">
+													<i class="fa fa-shopping-cart"></i> <span id="messAddCart' . $item['id'] . '">THÊM VÀO GIỎ</span>
+												</button>
+											</div>
 										</div>';
 								}
 								?>
@@ -205,25 +204,25 @@
 												</div>
 											</div>';
 									} else if ($item['trangthai'] == 7) // Còn hàng
+
 										echo '<div class="product" >
-											<div class="product-img" style="height:250px" onclick="location=\'index.php?act=product&id=' . $item['id'] . '\'">
-												<img src="./img/' . $item['hinh_anh'] . '" alt="" style="height:100%">
-												<div class="product-label">
-													
-													<span class="new">New</span>
-												</div>
+										<div class="product-img" style="height:250px" onclick="location=\'index.php?act=product&id=' . $item['id'] . '\'">
+											<img src="./img/' . $item['hinh_anh'] . '" alt="" style="height:100%">
+											<div class="product-label">
+												<span class="new">New</span>
 											</div>
-											<div class="product-body">
-												<p class="product-category"><small>' . $item['sl_da_ban'] . ' đã bán</small></p>
-												<h3 class="product-name"><a href="?act=product&id=' . $item['id'] . '">' . $item['ten_sp'] . '</a></h3>
-												<h4 class="product-price">' . currency_format($item['don_gia']) . '</h4>
-												<div class="product-rating">
-													<button class="add-to-cart-btn" onclick="addCart(' . $item['id'] . ',1);themThanhCong(' . $item['id'] . ');"><i class="fa fa-shopping-cart"></i> <span id="messAddCart' . $item['id'] . '">Thêm vào giỏ</span></button>
-												</div>
-												
+										</div>
+										<div class="product-body">
+											<p class="product-category"><small>' . $item['sl_da_ban'] . ' đã bán</small></p>
+											<h3 class="product-name"><a href="?act=product&id=' . $item['id'] . '">' . $item['ten_sp'] . '</a></h3>
+											<h4 class="product-price">' . currency_format($item['don_gia']) . '</h4>
+										</div>
+											<div class="add-to-cart">
+												<button class="add-to-cart-btn" onclick="addCart(' . $item['id'] . ',1);themThanhCong(' . $item['id'] . ');">
+													<i class="fa fa-shopping-cart"></i> <span id="messAddCart' . $item['id'] . '">THÊM VÀO GIỎ</span>
+												</button>
 											</div>
-										
-										</div>';
+									</div>';
 								}
 								?>
 								<!-- /product -->
@@ -299,12 +298,14 @@
 												<p class="product-category"><small>' . $item['sl_da_ban'] . ' đã bán</small></p>
 												<h3 class="product-name"><a href="?act=product&id=' . $item['id'] . '">' . $item['ten_sp'] . '</a></h3>
 												<h4 class="product-price">' . currency_format($item['don_gia']) . '</h4>
-												<div class="product-rating">
-													<button class="add-to-cart-btn" onclick="addCart(' . $item['id'] . ',1);themThanhCong(' . $item['id'] . ');"><i class="fa fa-shopping-cart"></i> <span id="messAddCart' . $item['id'] . '">Thêm vào giỏ</span></button>
-												</div>
-												
+								
+					
 											</div>
-											
+																						<div class="add-to-cart">
+												<button class="add-to-cart-btn" onclick="addCart(' . $item['id'] . ',1);themThanhCong(' . $item['id'] . ');">
+													<i class="fa fa-shopping-cart"></i> <span id="messAddCart' . $item['id'] . '">THÊM VÀO GIỎ</span>
+												</button>
+											</div>
 										</div>';
 								}
 								?>
@@ -323,4 +324,10 @@
 	</div>
 	<!-- /container -->
 </div>
+<script>
+	function themThanhCong(id) {
+		alert('Thêm vào giỏ thành công!');
+		// document.getElementById('messAddCart' + id).innerText = 'Đã thêm!';
+	}
+</script>
 <!-- /SECTION -->

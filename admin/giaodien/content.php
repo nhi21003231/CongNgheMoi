@@ -11,9 +11,13 @@ if (isset($_GET['tmuc'])) {
     if ($_GET['tmuc'] == 'Quản lý vận chuyển')
         include('hoadon_distributor.php');
 }
+// if (isset($_GET['tmuc'])) {
+//     if ($_GET['tmuc'] == 'Thống kê vận chuyển')
+//         include('thongkevc.php');
+// }
 if (isset($_GET['tmuc'])) {
-    if ($_GET['tmuc'] == 'Thống kê vận chuyển')
-        include('thongkevc.php');
+    if ($_GET['tmuc'] == 'Thống kê doanh thu')
+        include('thongke.php');
 }
 if (isset($_GET['tmuc'])) {
     if ($_GET['tmuc'] == 'Sản phẩm')
@@ -47,26 +51,26 @@ if (isset($_GET['tmuc'])) {
     if ($_GET['tmuc'] == 'Phân công vận chuyển')
         include('phancongvc.php');
 }
-if (isset($_GET['tmuc'])) {
-    if ($_GET['tmuc'] == 'Phân công kiểm định')
-        include('phancongkd.php');
-}
-if (isset($_GET['tmuc'])) {
-    if ($_GET['tmuc'] == 'Phân công vận chuyển')
-        include('phancongvc.php');
-}
+// if (isset($_GET['tmuc'])) {
+//     if ($_GET['tmuc'] == 'Phân công kiểm định')
+//         include('phancongkd.php');
+// }
+// if (isset($_GET['tmuc'])) {
+//     if ($_GET['tmuc'] == 'Phân công vận chuyển')
+//         include('phancongvc.php');
+// }
 if (isset($_GET['tmuc'])) {
     if ($_GET['tmuc'] == 'Thể loại')
         include('theloai.php');
 }
-if (isset($_GET['tmuc'])) {
-    if ($_GET['tmuc'] == 'Phương thức vận chuyển')
-        include('ptvc.php');
-}
-if (isset($_GET['tmuc'])) {
-    if ($_GET['tmuc'] == 'Phương thức thanh toán')
-        include('pttt.php');
-}
+// if (isset($_GET['tmuc'])) {
+//     if ($_GET['tmuc'] == 'Phương thức vận chuyển')
+//         include('ptvc.php');
+// }
+// if (isset($_GET['tmuc'])) {
+//     if ($_GET['tmuc'] == 'Phương thức thanh toán')
+//         include('pttt.php');
+// }
 if (isset($_GET['act'])) {
     if ($_GET['act'] == 'datncc')
         include('nhacungcap_dat.php');
@@ -99,10 +103,10 @@ if (isset($_GET['tmuc'])) {
     if ($_GET['tmuc'] == 'Danh mục')
         include('danhmucdemo.php');
 }
-if (isset($_GET['tmuc'])) {
-    if ($_GET['tmuc'] == 'Phiếu nhập')
-        include('phieunhap.php');
-}
+// if (isset($_GET['tmuc'])) {
+//     if ($_GET['tmuc'] == 'Phiếu nhập')
+//         include('phieunhap.php');
+// }
 
 if (isset($_GET['act']))
     if ($_GET['act'] == 'add')
@@ -156,74 +160,74 @@ if (isset($_GET['act']) && isset($_GET['dk'])) {
 </div>');
 }
 ####PTVC
-if (isset($_GET['act'])) {
-    if ($_GET['act'] == 'addvc')
-        include('ptvc_adding.php');
-}
-if (isset($_GET['act']) && isset($_GET['dk'])) {
-    if (($_GET['act'] == 'addvctc') && ($_GET['dk'] == 'yes'))
-        echo ('<div id="error-notify" class="box-content">
-    <h2>Thành công</h2>
+// if (isset($_GET['act'])) {
+//     if ($_GET['act'] == 'addvc')
+//         include('ptvc_adding.php');
+// }
+// if (isset($_GET['act']) && isset($_GET['dk'])) {
+//     if (($_GET['act'] == 'addvctc') && ($_GET['dk'] == 'yes'))
+//         echo ('<div id="error-notify" class="box-content">
+//     <h2>Thành công</h2>
     
-    <a href="./admin.php?tmuc=Phương thức vận chuyển">Danh sách PTVC</a>
-</div>');
-}
-if (isset($_GET['act']) && isset($_GET['dk'])) {
-    if (($_GET['act'] == 'addvctc') && ($_GET['dk'] == 'no'))
-        echo ('<div id="error-notify" class="box-content">
-    <h2>Thất bại</h2>
+//     <a href="./admin.php?tmuc=Phương thức vận chuyển">Danh sách PTVC</a>
+// </div>');
+// }
+// if (isset($_GET['act']) && isset($_GET['dk'])) {
+//     if (($_GET['act'] == 'addvctc') && ($_GET['dk'] == 'no'))
+//         echo ('<div id="error-notify" class="box-content">
+//     <h2>Thất bại</h2>
     
-    <a href="./admin.php?tmuc=Phương thức vận chuyển">Danh sách PTVC</a>
-</div>');
-}
-if (isset($_GET['act']) && isset($_GET['dk'])) {
-    if (($_GET['act'] == 'addvctc') && ($_GET['dk'] == 'trung'))
-        echo ('<div id="error-notify" class="box-content">
-    <h2>Tên PTVC không được trùng!</h2>
+//     <a href="./admin.php?tmuc=Phương thức vận chuyển">Danh sách PTVC</a>
+// </div>');
+// }
+// if (isset($_GET['act']) && isset($_GET['dk'])) {
+//     if (($_GET['act'] == 'addvctc') && ($_GET['dk'] == 'trung'))
+//         echo ('<div id="error-notify" class="box-content">
+//     <h2>Tên PTVC không được trùng!</h2>
     
-    <a href="./admin.php?tmuc=Phương thức vận chuyển">Danh sách PTVC</a>
-</div>');
-}
-if (isset($_GET['act'])) {
-    if ($_GET['act'] == 'addtt')
-        include('pttt_adding.php');
-}
-if (isset($_GET['act']) && isset($_GET['dk'])) {
-    if (($_GET['act'] == 'addtttc') && ($_GET['dk'] == 'yes'))
-        echo ('<div id="error-notify" class="box-content">
-    <h2>Thành công</h2>
+//     <a href="./admin.php?tmuc=Phương thức vận chuyển">Danh sách PTVC</a>
+// </div>');
+// }
+// if (isset($_GET['act'])) {
+//     if ($_GET['act'] == 'addtt')
+//         include('pttt_adding.php');
+// }
+// if (isset($_GET['act']) && isset($_GET['dk'])) {
+//     if (($_GET['act'] == 'addtttc') && ($_GET['dk'] == 'yes'))
+//         echo ('<div id="error-notify" class="box-content">
+//     <h2>Thành công</h2>
     
-    <a href="./admin.php?tmuc=Phương thức thanh toán">Danh sách PTTT</a>
-</div>');
-}
-if (isset($_GET['act']) && isset($_GET['dk'])) {
-    if (($_GET['act'] == 'addtttc') && ($_GET['dk'] == 'no'))
-        echo ('<div id="error-notify" class="box-content">
-    <h2>Thất bại</h2>
+//     <a href="./admin.php?tmuc=Phương thức thanh toán">Danh sách PTTT</a>
+// </div>');
+// }
+// if (isset($_GET['act']) && isset($_GET['dk'])) {
+//     if (($_GET['act'] == 'addtttc') && ($_GET['dk'] == 'no'))
+//         echo ('<div id="error-notify" class="box-content">
+//     <h2>Thất bại</h2>
     
-    <a href="./admin.php?tmuc=Phương thức thanh toán">Danh sách PTTT</a>
-</div>');
-}
-if (isset($_GET['act'])) {
-    if ($_GET['act'] == 'suatl')
-        include('theloai_editing.php');
-}
-if (isset($_GET['act'])) {
-    if ($_GET['act'] == 'xoatl')
-        include('theloai_deleting.php');
-}
-if (isset($_GET['act'])) {
-    if ($_GET['act'] == 'suavc')
-        include('ptvc_editing.php');
-}
-if (isset($_GET['act'])) {
-    if ($_GET['act'] == 'xoavc')
-        include('ptvc_deleting.php');
-}
-if (isset($_GET['act'])) {
-    if ($_GET['act'] == 'xoatt')
-        include('pttt_deleting.php');
-}
+//     <a href="./admin.php?tmuc=Phương thức thanh toán">Danh sách PTTT</a>
+// </div>');
+// }
+// if (isset($_GET['act'])) {
+//     if ($_GET['act'] == 'suatl')
+//         include('theloai_editing.php');
+// }
+// if (isset($_GET['act'])) {
+//     if ($_GET['act'] == 'xoatl')
+//         include('theloai_deleting.php');
+// }
+// if (isset($_GET['act'])) {
+//     if ($_GET['act'] == 'suavc')
+//         include('ptvc_editing.php');
+// }
+// if (isset($_GET['act'])) {
+//     if ($_GET['act'] == 'xoavc')
+//         include('ptvc_deleting.php');
+// }
+// if (isset($_GET['act'])) {
+//     if ($_GET['act'] == 'xoatt')
+//         include('pttt_deleting.php');
+// }
 if (isset($_GET['act'])) {
     if ($_GET['act'] == 'addncc')
         include('nhacungcap_adding.php');

@@ -22,7 +22,7 @@
     </div>
     <div class="wrap-field">
         <label>Email: </label>
-        <input type="email" name="email" value="" placeholder="VD: lyphuc823@gmail.com"/>
+        <input type="email" name="email" value="" placeholder="VD: vovannhi2513@gmail.com"/>
         <div class="clear-both"></div>
     </div>
     <input name="btnnvadd" type="submit" title="Lưu nhân viên" value="Lưu" />

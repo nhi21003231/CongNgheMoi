@@ -72,13 +72,69 @@ if($act=='category'){
 $list=executeResult($sql);
 if(empty($list))echo '<h3>0 sản phẩm được tìm thấy.</h3>';
 foreach($list as $item){
-    if($item['so_luong']==0 && $item['trangthai']==7){
-        echo '<div class="col-md-4 col-xs-6">
+//     if($item['so_luong']==0 && $item['trangthai']==7){
+//         echo '<div class="col-md-4 col-xs-6">
+//         <div class="product">
+//             <div class="product-img" style="height:250px">
+//                 <img src="./img/'.$item['hinh_anh'].'" alt="" style="height:100%">
+//                 <div class="product-label">
+                    
+//                     <span class="new">HẾT HÀNG</span>
+//                 </div>
+//             </div>
+//             <div class="product-body">
+//                 <p class="product-category"><small>'.$item['sl_da_ban'].' đã bán</small></p>
+//                 <h3 class="product-name"><a href="index.php?act=product&id='.$item['id'].'">'.$item['ten_sp'].'</a></h3>
+//                 <h4 class="product-price">'.currency_format($item['don_gia']).'</h4>
+//                 <div class="product-rating">
+//                     <i class="fa fa-star"></i>
+//                     <i class="fa fa-star"></i>
+//                     <i class="fa fa-star"></i>
+//                     <i class="fa fa-star"></i>
+//                     <i class="fa fa-star"></i>
+//                 </div>
+                
+//             </div>
+//             <div class="add-to-cart">
+//                 <button class="add-to-cart-btn"> SẢN PHẨM ĐÃ HẾT</button>
+//             </div>
+//         </div>
+//     </div>';
+//     }else if($item['trangthai']==7)
+//     echo'<div class="col-md-4 col-xs-6">
+//     <div class="product" >
+//         <div class="product-img" style="height:250px" onclick="location=\'index.php?act=product&id='.$item['id'].'\'">
+//             <img src="./img/'.$item['hinh_anh'].'" alt="" style="height:100%">
+//             <div class="product-label">
+                
+//                 <span class="new">NEW</span>
+//             </div>
+//         </div>
+//         <div class="product-body">
+//             <p class="product-category"><small>'.$item['sl_da_ban'].' đã bán</small></p>
+//             <h3 class="product-name"><a href="index.php?act=product&id='.$item['id'].'">'.$item['ten_sp'].'</a></h3>
+//             <h4 class="product-price">'.currency_format($item['don_gia']).'</h4>
+//             <div class="product-rating">
+//                 <i class="fa fa-star"></i>
+//                 <i class="fa fa-star"></i>
+//                 <i class="fa fa-star"></i>
+//                 <i class="fa fa-star"></i>
+//                 <i class="fa fa-star"></i>
+//             </div>
+            
+//         </div>
+//         <div class="add-to-cart">
+//             <button class="add-to-cart-btn" onclick=" addCart('.$item['id'].',1); themThanhCong('.$item['id'].'); "><i class="fa fa-shopping-cart"></i> <span id="messAddCart'.$item['id'].'">thêm vào giỏ</span></button>
+//         </div>
+//     </div>
+// </div>';
+if($item['so_luong']==0){
+    // Hiện sản phẩm hết hàng (mọi trạng thái)
+    echo '<div class="col-md-4 col-xs-6">
         <div class="product">
             <div class="product-img" style="height:250px">
                 <img src="./img/'.$item['hinh_anh'].'" alt="" style="height:100%">
                 <div class="product-label">
-                    
                     <span class="new">HẾT HÀNG</span>
                 </div>
             </div>
@@ -93,21 +149,29 @@ foreach($list as $item){
                     <i class="fa fa-star"></i>
                     <i class="fa fa-star"></i>
                 </div>
-                
             </div>
             <div class="add-to-cart">
                 <button class="add-to-cart-btn"> SẢN PHẨM ĐÃ HẾT</button>
             </div>
         </div>
     </div>';
-    }else if($item['trangthai']==7)
+} else {
+    // Hiện sản phẩm còn hàng (mọi trạng thái)
     echo'<div class="col-md-4 col-xs-6">
     <div class="product" >
         <div class="product-img" style="height:250px" onclick="location=\'index.php?act=product&id='.$item['id'].'\'">
             <img src="./img/'.$item['hinh_anh'].'" alt="" style="height:100%">
             <div class="product-label">
-                
-                <span class="new">NEW</span>
+                <span class="new">';
+    // Hiển thị trạng thái
+    switch($item['trangthai']) {
+        case 7: echo 'Đã đăng'; break;
+        case 6: echo 'Chờ duyệt'; break;
+        case 5: echo 'Chưa đạt chuẩn'; break;
+        case 4: echo 'Đạt chuẩn'; break;
+        default: echo 'Trạng thái: '.$item['trangthai'];
+    }
+    echo '</span>
             </div>
         </div>
         <div class="product-body">
@@ -121,13 +185,13 @@ foreach($list as $item){
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
             </div>
-            
         </div>
         <div class="add-to-cart">
             <button class="add-to-cart-btn" onclick=" addCart('.$item['id'].',1); themThanhCong('.$item['id'].'); "><i class="fa fa-shopping-cart"></i> <span id="messAddCart'.$item['id'].'">thêm vào giỏ</span></button>
         </div>
     </div>
 </div>';
+}
 }
 
  // phan trang 
@@ -187,3 +251,10 @@ if($numberPage>1){
 }
 echo '</div>'
 ?>
+<script>
+function themThanhCong(id) {
+    alert('Thêm vào giỏ thành công!');
+    // Nếu muốn đổi chữ trên nút:
+    // document.getElementById('messAddCart' + id).innerText = 'Đã thêm!';
+}
+</script>

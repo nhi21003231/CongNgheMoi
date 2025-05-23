@@ -29,7 +29,7 @@ if (!empty($_SESSION['nguoidung'])) {
 
 
     // Đóng kết nối cơ sở dữ liệu sau khi truy vấn
-    mysqli_close($con);
+    // mysqli_close($con);
     ?>
 
 <div style="margin: 10px">
@@ -95,6 +95,7 @@ if (!empty($_SESSION['nguoidung'])) {
     <div class="clear-both"></div>
 </div>
 <?php
+    mysqli_close($con); // Đóng kết nối ở đây, sau khi đã hiển thị xong bảng
 } else {
     echo "Bạn cần đăng nhập để xem chi tiết hóa đơn.";
 }
