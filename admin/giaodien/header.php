@@ -8,7 +8,7 @@
 					margin: 0 0 10px;
 					padding-left: 21px;"><?php if ($_SESSION['quyen'] == 1) { ?>TRANG ADMIN <?php } ?>
 	<?php if ($_SESSION['quyen'] == 9) { ?>TRANG VẬN CHUYỂN <?php } ?>
-	<?php if ($_SESSION['quyen'] == 8) { ?>TRANG KIỂM ĐỊNH <?php } ?>
+	<?php if ($_SESSION['quyen'] == 8) { ?>TRANG KIỂM ĐỊNH VÀ VẬN CHUYỂN<?php } ?>
 	<?php if ($_SESSION['quyen'] == 10) { ?>TRANG QUẢN LÝ <?php } ?>
 	<?php if ($_SESSION['quyen'] == 11) { ?>TRANG QUẢN LÝ NHÂN VIÊN <?php } ?>
 

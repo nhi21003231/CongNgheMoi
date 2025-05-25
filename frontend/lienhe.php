@@ -48,7 +48,7 @@
 <body>
     <div class="container">
         <h1>Liên Hệ Với Chúng Tôi</h1>
-        <form action="submit_form.php" method="POST" class = "form1"> <!-- Đường dẫn xử lý form -->
+        <form action="#" method="POST" class = "form1"> <!-- Đường dẫn xử lý form -->
             <label for="name">Họ và Tên:</label>
             <input type="text" id="name" name="name" required>
 

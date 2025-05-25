@@ -100,6 +100,23 @@
 session_start(); // Khởi tạo session để xử lý giỏ hàng
 header('Content-type: text/html; charset=utf-8');
 
+// function execPostRequest($url, $data)
+// {
+//     $ch = curl_init($url);
+//     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+//     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+//         'Content-Type: application/json',
+//         'Content-Length: ' . strlen($data))
+//     );
+//     curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+//     curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+//     $result = curl_exec($ch);
+//     curl_close($ch);
+//     return $result;
+// }
+
 function execPostRequest($url, $data)
 {
     $ch = curl_init($url);
@@ -110,13 +127,15 @@ function execPostRequest($url, $data)
         'Content-Type: application/json',
         'Content-Length: ' . strlen($data))
     );
-    curl_setopt($ch, CURLOPT_TIMEOUT, 5);
-    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 20); // Tăng timeout lên 20 giây
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
     $result = curl_exec($ch);
+    if ($result === false) {
+        echo 'cURL error: ' . curl_error($ch);
+    }
     curl_close($ch);
     return $result;
 }
-
 // Thông tin thanh toán MoMo
 $endpoint = "https://test-payment.momo.vn/v2/gateway/api/create";
 $partnerCode = 'MOMOBKUN20180529';

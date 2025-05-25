@@ -1,4 +1,11 @@
 <style>
+body {
+    background-image: url('img/banner/6.jpg');
+    background-size: 120% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+}
   .form-tt {
     margin: 0 auto;
     margin-bottom: -120px;
@@ -6,7 +13,8 @@
     border-radius: 10px;
     overflow: hidden;
     padding: 55px 55px 37px;
-    background: darkgreen;
+    /* background: darkgreen; */
+    background: rgba(17, 164, 34, 0.5);
     text-align: center;
     margin-top: 20px;
   }

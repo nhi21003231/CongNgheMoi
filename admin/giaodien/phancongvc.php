@@ -83,7 +83,7 @@ if (!empty($_SESSION['nguoidung'])) {
 
 
     // Truy vấn để lấy danh sách người dùng từ bảng taikhoang với id_quyen = 9
-    $userQuery = "SELECT username, fullname FROM taikhoang WHERE id_quyen = 9";
+    $userQuery = "SELECT username, fullname FROM taikhoang WHERE id_quyen = 8";
     $userResult = mysqli_query($con, $userQuery);
     $users = [];
     while ($user = mysqli_fetch_assoc($userResult)) {

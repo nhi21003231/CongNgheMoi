@@ -1,0 +1,22 @@
+https://developers.momo.vn/v2/#/README?id=key-credential
+https://momofree.apimienphi.com/login.html
+dung trang nay https://github.com/momo-wallet/payment/blob/master/php/PayMoMo/init_payment.php
+KH la nongdan bán sản phẩm để chat
+user123
+12345
+
+KH:
+nhi123
+Nhi123456@
+
+nongdan:
+nhinongdan123
+Nhi123456@
+
+kiemdinh
+nhikiemdinh
+123
+
+admin:
+vovannhi123
+vovannhi123

@@ -7,7 +7,7 @@
 			<div class="banner text-center mx-auto"> <!-- Thêm lớp "text-center" để căn giữa -->
 				<!-- Thay đổi đường dẫn và alt theo hình ảnh của banner bạn muốn sử dụng -->
 				<div>
-					<a href="#"><img src="./img/banner/banner999.png" alt="Your Banner" style="max-width: 75%; height: auto; display: inline-block; border-radius: 20px; box-shadow: 0 14px 16px rgba(0, 0, 0, 0.1); width: 80%;" class="img-fluid"></a> <!-- Thêm thuộc tính "display: inline-block;" -->
+					<a href="#"><img src="./img/banner/123.jpg" alt="Your Banner" style="max-width: 75%; height: auto; display: inline-block; border-radius: 20px; box-shadow: 0 14px 16px rgba(0, 0, 0, 0.1); width: 80%;" class="img-fluid"></a> <!-- Thêm thuộc tính "display: inline-block;" -->
 
 				</div>
 			</div>
@@ -21,7 +21,8 @@
 			<div class="col-md-4 col-xs-6">
 				<div class="shop" style="width: 350pxl;">
 					<div class="shop-img">
-						<img src="https://xenangnhapkhau.com/wp-content/uploads/2022/01/nong-san-la-gi-4.jpg" alt="">
+						<!-- <img src="https://xenangnhapkhau.com/wp-content/uploads/2022/01/nong-san-la-gi-4.jpg" alt=""> -->
+						<img src="./img/banner/1.jpg" alt="" height="230px">
 					</div>
 					<div class="shop-body">
 						<a href="#">
@@ -36,11 +37,12 @@
 			<div class="col-md-4 col-xs-6">
 				<div class="shop" style="width: 350pxl;">
 					<div class="shop-img">
-						<img src="https://vietjack.me/storage/uploads/images/34622/gia-dinh-hanh-phuc-hoat-hinh-10-1697616192.jpg" alt="">
+						<!-- <img src="https://vietjack.me/storage/uploads/images/34622/gia-dinh-hanh-phuc-hoat-hinh-10-1697616192.jpg" alt=""> -->
+						<img src="./img/banner/2.jpg" alt="" height="230px">
 					</div>
 					<div class="shop-body">
 						<a href="#">
-							<h3>Bữa Tối Hạnh Phúc</h3>
+							<h3>Thực Phẩm Tốt Cho Sức Khỏe</h3>
 						</a>
 					</div>
 				</div>
@@ -51,7 +53,8 @@
 			<div class="col-md-4 col-xs-6">
 				<div class="shop" style="width: 350pxl;">
 					<div class="shop-img">
-						<img src="https://cdnmedia.baotintuc.vn/Upload/pTMF1jgWpbjY1m8G1xWUsg/files/2022/12/dongnai.jpg" alt="">
+						<!-- <img src="https://cdnmedia.baotintuc.vn/Upload/pTMF1jgWpbjY1m8G1xWUsg/files/2022/12/dongnai.jpg" alt=""> -->
+						<img src="./img/banner/3.jpg" alt="" height="230px">
 					</div>
 					<div class="shop-body">
 						<a href="#">

@@ -1,4 +1,11 @@
 <style>
+body {
+    background-image: url('img/banner/6.jpg');
+    background-size: 120% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+}
 .form-tt {
 margin: 0 auto;
 margin-bottom: -80px;
@@ -10,7 +17,8 @@ padding: 55px 55px 37px;
 background: -o-linear-gradient(top,#000000,#736A6A,#000000);
 background: -moz-linear-gradient(top,#000000,#736A6A,#000000);
 background: linear-gradient(top,#000000,#736A6A,#000000); */
-background: darkgreen;
+/* background: darkgreen; */
+background: rgba(17, 164, 34, 0.5);
 text-align: center;
 margin-top: 20px;
 

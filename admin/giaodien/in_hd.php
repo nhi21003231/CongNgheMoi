@@ -1,8 +1,8 @@
 <?php
 require('../../TCPDF-main/tcpdf.php');
 $host = "localhost";
-$user = "nongsans_root";
-$password = "7HgAYa_,yc@f";
+$user = "root";
+$password = "";
 $database = "nongsans_db";
 $con = mysqli_connect($host, $user, $password, $database);
 if (mysqli_connect_errno()) {

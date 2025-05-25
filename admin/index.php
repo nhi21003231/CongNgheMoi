@@ -32,7 +32,9 @@ if (isset($_GET['logout']))
     }
 
     body {
-        background-image: url("img/bg.jpg");
+        /* background-image: url("img/bg.jpg"); */
+        /* background-image: url("img/bg123.png"); */
+        background-image: url("img/bag1234.jpg");
         display: flex;
         flex-direction: column;
         justify-content: center;

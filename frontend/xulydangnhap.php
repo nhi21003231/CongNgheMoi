@@ -49,7 +49,7 @@ if (isset($_POST['dangnhap'])) {
                         echo "<script>
                             showNotification('Đăng nhập thành công!');
                             setTimeout(() => {
-                                window.location = 'http://localhost:8080/Nhom10_CongNgheMoi/supplier/admin.php';
+                                window.location = 'http://localhost:8080/Nhom10_CongNgheMoi/supplier/supplier.php';
                             }, 1000);
                         </script>";
                     } else {

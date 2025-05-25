@@ -50,7 +50,7 @@
         <?php
         $menus = [
             'Sản phẩm',
-            'Quản lý doanh thu',
+            // 'Quản lý doanh thu',
             'Thống kê doanh thu',
             'Thống kê sản phẩm',
             'Sản phẩm chưa kiểm định',
