@@ -5,8 +5,11 @@ if (isset($_GET['id'])) {
 } else {
     die('Không tìm thấy sản phẩm!'); // Thông báo lỗi nếu không có id
 }
-$sql = 'select ten_sp, ten_tl,id_nhaban, theloai.id as id_tl from sanpham, theloai where sanpham.id=' . $id . ' and theloai.id=sanpham.id_the_loai';
+#note ở đây : Võ văn Nhí xuất xứ
+// $sql = 'select ten_sp, ten_tl,id_nhaban, theloai.id as id_tl from sanpham, theloai where sanpham.id=' . $id . ' and theloai.id=sanpham.id_the_loai';
 
+// $listcate_pro = executeSingleResult($sql);
+$sql = 'select ten_sp, ten_tl, id_nhaban, theloai.id as id_tl, xuatsu from sanpham, theloai where sanpham.id=' . $id . ' and theloai.id=sanpham.id_the_loai';
 $listcate_pro = executeSingleResult($sql);
 // $sql = 'select ten_sp, ten_tl, id_nhaban, theloai.id as id_tl 
 //         from sanpham, theloai 
